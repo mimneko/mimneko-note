@@ -1,1 +1,0 @@
-# mimneko-note
