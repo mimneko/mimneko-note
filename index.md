@@ -7,6 +7,7 @@
 - [授業資料](https://mimneko.github.io/classroom/)
 - [進数変換](https://mimneko.github.io/radix/)
 - [色](https://mimneko.github.io/color/)
+- [トーン一覧](https://mimneko.github.io/color/tone/)
 - [MathJax](https://mimneko.github.io/mimneko-note/math.html)
 - [参考文献の書き方](https://mimneko.github.io/mimneko-note/reference.html)
 
