@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MathJax使用例</title>
+  <!-- 基本スタイル -->
+  <link rel="stylesheet" href="https://mimneko.github.io/mimneko-note/css/basic-mimneko.css">
+  <!-- fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- MathJax -->
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <!-- 本ページ限定 -->
+  <style>
+    /* -----------------------------------------
+      増減表
+    ----------------------------------------- */
+    .derivative-test-chart {
+      border-collapse: collapse;
+      margin: 0 auto;
+    }
+
+    .derivative-test-chart td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+      min-width: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div id="content">
+      <h1 id="article-title">MathJax使用例</h1>
+      <div id="article-information">
+        <div id="renewal-date" datetime="2024-04-28">2024-04-28</div>
+        <div id="author">みむねこ</div>
+      </div>
+
+      <div id="toc">
+        <p id="toc-title">目次</p>
+        <ol id="toc-content">
+            <li><a href="#h2-1">数式</a></li>
+        </ol>
+      </div>
+    
+      <h2 id="h2-1">数式</h2>
+      <p><mark>アインシュタイン</mark>は \( E=mc^2 \) の公式を導きました。</p>
+      <p>$$ 3 + 4 = 7 $$</p>
+      <p>
+        \begin{eqnarray}
+          i\hbar\frac{\partial}{\partial t}\psi(x,t)=
+          \left(-\frac{\hbar^2}{2m}+V(x)\right)\psi(x,t)
+        \end{eqnarray}
+      </p>
+      <div class="koushiki-box">
+        <div class="box-title">2次方程式の解の公式</div>
+        <p>
+          2次方程式 \( ax^2+bx+c=0 \) の解は、 \( b^2-4ac\geqq0 \) のとき<br>
+          \begin{equation*}
+            x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}
+          \end{equation*}
+        </p>
+      </div>
+
+      <h2>増減表</h2>
+      <h3>htmlのtable + MathJax</h3>
+      <table class="derivative-test-chart">
+        <tr>
+            <td>\(x\)</td>
+            <td>\(\cdots\)</td>
+            <td>\(-1\)</td>
+            <td>\(\cdots\)</td>
+            <td>\(1\)</td>
+            <td>\(\cdots\)</td>
+        </tr>
+        <tr>
+            <td>\(f'(x)\)</td>
+            <td>\(+\)</td>
+            <td>\(0\)</td>
+            <td>\(-\)</td>
+            <td>\(0\)</td>
+            <td>\(+\)</td>
+        </tr>
+        <tr>
+            <td>\(f(x)\)</td>
+            <td>\(\nearrow\)</td>
+            <td>\(e\)</td>
+            <td>\(\searrow\)</td>
+            <td>\(e\)</td>
+            <td>\(\nearrow\)</td>
+        </tr>
+      </table>
+      <h3>MathJaxだけ</h3>
+      <p>
+      \begin{array}{|c|c|c|c|c|c|}
+        \hline
+        x     & \cdots & -1 & \cdots & 1 & \cdots \\ 
+        \hline
+        f’(x) & + & 0 & – & 0 & + \\ 
+        \hline
+        f(x)  & \nearrow & e & \searrow & -e & \nearrow \\
+        \hline
+      \end{array}
+      </p>
+
+      <h2 id="reference">参考</h2>
+      <h3>MathJax</h3>
+      <h4>一例</h4>
+      <p>使用例も載っているのでおすすめ。</p>
+      <ul class="reference-list">
+        <li><a href="https://www.tohoho-web.com/ex/mathjax.html" target="_blank">とほほのMathJax入門 - とほほのWWW入門</a>, 参照<time datetime="2024-04-27">2024-04-27</time></li>
+        <li><a href="https://easy-copy-mathjax.nakaken88.com/table/" target="_blank">表 | Easy Copy Mathjax</a>, 参照<time datetime="2024-04-28">2024-04-28</time></li>
+      </ul>
+
+    </div>
+  </main>
+
+</body>
+</html>
