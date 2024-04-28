@@ -1,3 +1,261 @@
-html {
-  background-color: red;
+/* -----------------------------------------
+  定数
+----------------------------------------- */
+:root {
+  --color-main: #0099ce;
+  --color-main-pale: #cce4ff;
+  --color-white: #fcfcfc;
+  --color-gray: #808080;
+  --color-black: #222;
+  --color-toc: #f4f4f4;
+}
+
+/* -----------------------------------------
+  全体
+----------------------------------------- */
+body {
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  background-color: var(--color-white);/*#f5f5f5;*//*#ecf4d9;*/
+  color: var(--color-black);
+  margin: 0;
+}
+
+main {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 844px;
+  background-color: var(--color-white);
+}
+
+@media print {
+  body,
+  main {
+    background-color: transparent;
+  }
+}
+
+#content {
+  margin: 0 30px;
+  padding: 30px 0;
+}
+
+/* -----------------------------------------
+  記事情報
+----------------------------------------- */
+#article-information {
+  display: flex;
+  justify-content: flex-end;
+  color: var(--color-gray);
+  align-items: baseline;
+  margin-top: -1rem;
+  font-size: small;
+}
+
+#renewal-date::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f1da";
+  font-weight: bold;
+  margin: 0 .3rem;
+}
+
+#author::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f304";
+  font-weight: bold;
+  margin: 0 .3rem 0 1rem;
+}
+
+/* -----------------------------------------
+  見出し
+----------------------------------------- */
+h1 {
+  padding: .75rem 1rem;
+  margin: 0 0 1.5rem 0;
+  border-bottom: solid 3px var(--color-black);
+}
+
+h2 {
+  position: relative;
+  padding: .75rem 1rem .6rem 1rem;
+  margin: 1.5rem 0;
+  background-color: var(--color-main);
+  border-top: 2px solid var(--color-white);
+  border-bottom: 2px solid var(--color-white);
+  color: var(--color-white);
+}
+
+h2:before {
+  position: absolute;
+  top: -4px;
+  left: 0;
+  width: 100%;
+  height: calc(100% + 4px);
+  content: '';
+  border-top: 2px solid var(--color-main);
+  border-bottom: 2px solid var(--color-main);
+}
+
+h3 {
+  border-bottom: solid 3px var(--color-main-pale);
+  position: relative;
+  padding: 0 1rem .5rem;
+  font-size: 1.4rem;
+}
+
+h3::after {
+  position: absolute;
+  content: " ";
+  display: block;
+  border-bottom: solid 3px var(--color-main);
+  bottom: -3px;
+  width: 30%;
+  left: 0;
+}
+
+h4 {
+  font-size: 1.4rem;
+  border-left: solid 3px var(--color-main);
+  padding: .15em 0 0 calc(1rem - 3px);
+}
+
+/* -----------------------------------------
+  目次
+----------------------------------------- */
+#toc {
+  background-image: linear-gradient(
+    -45deg, 
+    #fff 25%, 
+    var(--color-toc) 25%, 
+    var(--color-toc) 50%, 
+    #fff 50%, 
+    #fff 75%, 
+    var(--color-toc) 75%, 
+    var(--color-toc)
+  );
+  background-size: 4px 4px;
+  border-bottom: 4px double rgba(199, 199, 199, 0.5);
+  border-top: 4px double rgba(199, 199, 199, 0.5);
+  width: 80%;
+  margin: 4rem auto;
+  padding: 1.5em 0;
+}
+
+@media print {
+  #toc {
+    background-image: none;
+  }
+}
+
+#toc-title {
+  text-align: center; /* 目次の中央揃え */
+  margin: 0;
+  margin-bottom: 1rem;
+  font-size: 1.2em;
+}
+
+#toc-title::before {
+  font-family: FontAwesome;
+  content: "\f0ca";
+  margin-right: .5rem;
+}
+
+#toc-content {
+  width: 80%;
+  margin: 0 auto;
+  line-height: 1.8rem;
+  padding-inline-start: 30px;
+}
+
+#toc-content li {
+  padding-left: 1rem;
+}
+
+#toc-content li a {
+  text-decoration: none;
+  color: var(--color-black);
+}
+
+#toc-content li ol{
+  padding-inline-start: .5em;
+}
+
+/* -----------------------------------------
+  ボックス
+----------------------------------------- */
+.koushiki-box {
+  margin: 2em auto;
+  background: #d3edfb;
+  width: 90%;
+}
+
+.koushiki-box .box-title {
+  font-size: 1.2em;
+  background: #54c3f1;
+  padding: .5em 1em .4em;
+  text-align: left;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+}
+
+.koushiki-box p {
+  padding: 15px 20px;
+  margin: 0;
+}
+
+/* -----------------------------------------
+  参考
+----------------------------------------- */
+/* ulの場合 */
+ul.reference-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+ul.reference-list li::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f111";
+  font-weight: 400;
+  margin-left: .8rem;
+  margin-right: 1.25rem;
+  position: relative; /* 相対位置 */
+  top: .75px; /* 1px下げる */
+}
+
+ul.reference-list li {
+  text-indent: -3em; /* 既存のスタイルに対する補正 */
+  padding-left: 3em; /* 2行目以降のli要素に適用される字下げ */
+}
+
+/* olの場合 */
+ol.reference-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+ol.reference-list li::before {
+  content: "［" counter(reference-counter) "］"; /* カウンターの値を表示 */
+  width: 2.5em; /* 固定の幅を指定 */
+  display: inline-block;
+  text-align: right;
+  margin-right: .5rem;
+  position: relative; /* 相対位置 */
+  top: .75px; /* 1px下げる */
+}
+
+ol.reference-list li {
+  counter-increment: reference-counter; /* カウンターを増やす */
+  text-indent: -3em; /* 既存のスタイルに対する補正 */
+  padding-left: 3em; /* 2行目以降のli要素に適用される字下げ */
+}
+
+/* -----------------------------------------
+  他
+----------------------------------------- */
+mark {
+  font-weight: bold;
+  background: linear-gradient(transparent 60%, #f9c270 0%);
 }
