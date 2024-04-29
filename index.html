@@ -14,47 +14,47 @@
   <!-- 本ページ限定 -->
   <!-- https://pote-chil.com/css-stock/ja/list -->
   <style>
-    .list-13 {
+    .folder-tree {
     padding: 1em;
 }
 
-.list-13 li {
+.folder-tree li {
     list-style-type: none;
     position: relative;
     padding: .3em .3em .3em 1em;
     color: #333333;
 }
 
-.list-13 li::before,
-.list-13 li::after {
+.folder-tree li::before,
+.folder-tree li::after {
     position: absolute;
     left: 0;
     background-color: #333333;
     content: '';
 }
 
-.list-13 li::before {
+.folder-tree li::before {
     top: 1em;
     width: 10px;
     height: 1px;
 }
 
-.list-13 li::after {
+.folder-tree li::after {
     top: 0;
     width: 1px;
     height: 100%;
 }
 
-.list-13 li:last-child::after {
+.folder-tree li:last-child::after {
     height: 1em;
 }
 
-.list-13 span {
+.folder-tree span {
     display: flex;
     align-items: center;
 }
 
-.list-13 span::before {
+.folder-tree span::before {
     display: inline-block;
     width: 1em;
     height: 1em;
@@ -95,7 +95,7 @@
       </ul>
 
       <h2>サイト構造</h2>
-      <ul class="list-13">
+      <ul class="folder-tree">
           <li>
               <span>高校数学</span>
               <ul>
