@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<title>色を変換する</title>
+
+</head>
+<body>
+  <label for="red_input">赤(R):</label>
+  <input type="number" min="0" max="255" value="0" id="red_input">
+  <input type="range" min="0" max="255" value="0" id="red_slider">
+  <br>
+  <label for="green_input">緑(G):</label>
+  <input type="number" min="0" max="255" value="0" id="green_input">
+  <input type="range" min="0" max="255" value="0" id="green_slider">
+  <br>
+  <label for="blue_input">青(B):</label>
+  <input type="number" min="0" max="255" value="0" id="blue_input">
+  <input type="range" min="0" max="255" value="0" id="blue_slider">
+  <br>
+  <label><input type="checkbox" id="uppercaseCheckbox"> 大文字で表示</label>
+  <br>
+  <label for="color_code_input">カラーコード:</label>
+  <input type="text" id="color_code_input" placeholder="16進数カラーコードを入力">
+  <span id="color_code" style="margin-left: 10px;"></span>
+  <br>
+  <div class="color_area" id="color_area"></div>
+
+  <p>参考</p>
+  <ul>
+    <li><a href="https://www.peko-step.com/tool/tfcolor.html" target="_blank">RGBとカラーコードの変換ツール : 数値が何色か調べることもできます - PEKO STEP</a>, 参照<time datetime="2024-04-24">2024-04-24</time></li>
+    <li><a href="https://www.example2.com" target="_blank">ウェブサイトのタイトル2</a>, 参照<time datetime="2024-04-24">2024-04-24</time></li>
+  </ul>
+  
+  
+<script>
+  const redInput = document.getElementById('red_input');
+  const redSlider = document.getElementById('red_slider');
+  const greenInput = document.getElementById('green_input');
+  const greenSlider = document.getElementById('green_slider');
+  const blueInput = document.getElementById('blue_input');
+  const blueSlider = document.getElementById('blue_slider');
+  const colorArea = document.getElementById('color_area');
+  const colorCodeInput = document.getElementById('color_code_input');
+  const uppercaseCheckbox = document.getElementById("uppercaseCheckbox");
+
+  function updateColor() {
+    const redValue = redInput.value;
+    const greenValue = greenInput.value;
+    const blueValue = blueInput.value;
+    const color = `rgb(${redValue}, ${greenValue}, ${blueValue})`;
+    colorArea.style.backgroundColor = color;
+
+    // スライダーの値も更新
+    redSlider.value = redValue;
+    greenSlider.value = greenValue;
+    blueSlider.value = blueValue;
+
+    // カラーコードを更新
+    let hexRed = Number(redValue).toString(16).padStart(2, '0').toLowerCase();
+    let hexGreen = Number(greenValue).toString(16).padStart(2, '0').toLowerCase();
+    let hexBlue = Number(blueValue).toString(16).padStart(2, '0').toLowerCase();
+    if (uppercaseCheckbox.checked) {
+      hexRed = Number(redValue).toString(16).padStart(2, '0').toUpperCase();
+      hexGreen = Number(greenValue).toString(16).padStart(2, '0').toUpperCase();
+      hexBlue = Number(blueValue).toString(16).padStart(2, '0').toUpperCase();
+    }
+    const hexCode = `#${hexRed}${hexGreen}${hexBlue}`;
+    colorCodeInput.value = hexCode;
+  }
+
+  function updateColorFromHex() {
+    let hexCode = colorCodeInput.value.replace(/^#/, '');
+    // カラーコードが3文字の場合は6文字に変換する
+    if (hexCode.length === 3) {
+      hexCode = hexCode.split('').map(char => char + char).join('');
+    }
+    if (hexCode.length === 6) {
+      const r = parseInt(hexCode.slice(0, 2), 16);
+      const g = parseInt(hexCode.slice(2, 4), 16);
+      const b = parseInt(hexCode.slice(4, 6), 16);
+      redInput.value = r;
+      greenInput.value = g;
+      blueInput.value = b;
+      updateColor();
+    }
+  }
+
+  redInput.addEventListener('input', updateColor);
+  redSlider.addEventListener('input', function() {
+    redInput.value = redSlider.value;
+    updateColor();
+  });
+  greenInput.addEventListener('input', updateColor);
+  greenSlider.addEventListener('input', function() {
+    greenInput.value = greenSlider.value;
+    updateColor();
+  });
+  blueInput.addEventListener('input', updateColor);
+  blueSlider.addEventListener('input', function() {
+    blueInput.value = blueSlider.value;
+    updateColor();
+  });
+  colorCodeInput.addEventListener('input', updateColorFromHex);
+  uppercaseCheckbox.addEventListener('change', updateColor);
+
+  // 初期表示の色更新
+  updateColor();
+
+</script>
+</body>
+</html>
