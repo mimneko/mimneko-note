@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>進数変換</title>
+<link rel="stylesheet" href="styles.css">    
+</head>
+
+<body>
+
+    <h2>進数変換</h2>
+
+    <div class="input-container">
+        <span class="input-label">2進数：</span>
+        <input type="text" id="binaryInput" class="input-field" placeholder="2進数を入力" oninput="convertNumbers('binary')">
+    </div>
+    <div class="input-container">
+        <span class="input-label">8進数：</span>
+        <input type="text" id="octalInput" class="input-field" placeholder="8進数を入力" oninput="convertNumbers('octal')">
+    </div>
+    <div class="input-container">
+        <span class="input-label">10進数：</span>
+        <input type="text" id="decimalInput" class="input-field" placeholder="10進数を入力" oninput="convertNumbers('decimal')">
+    </div>
+    <div class="input-container">
+        <span class="input-label">16進数：</span>
+        <input type="text" id="hexadecimalInput" class="input-field" placeholder="16進数を入力" oninput="convertNumbers('hexadecimal')">
+    </div>
+    <input type="checkbox" id="uppercaseCheckbox" onchange="convertNumbers('decimal')">
+    <label for="uppercaseCheckbox">大文字で表示</label>
+
+    <p>参考</p>
+    <ul>
+        <li><a href="https://hogehoge.tk/tool/number.html" target="_blank">2進数、8進数、10進数、16進数相互変換ツール</a>, 参照<time datetime="2024-04-25">2024-04-25</time></li>
+    </ul>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

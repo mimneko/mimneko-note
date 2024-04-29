@@ -1,0 +1,17 @@
+.input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.input-label {
+    width: 80px; /* ラベルの幅を指定 */
+    text-align: right; /* ラベルを右揃えにする */
+    margin-right: 10px;
+}
+
+.input-field {
+    width: 200px;
+    font-family: monospace; /* 等幅フォントに設定 */
+    text-align: right; /* 文字を右揃えにする */
+}
