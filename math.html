@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MathJax使用例</title>
+  <title>高校数学用MathJax</title>
   <!-- ファビコン -->
   <link rel="icon" href="https://mimneko.github.io/mimneko-note/img/transparent-mimneko.png">
   <link rel="apple-touch-icon" href="https://mimneko.github.io/mimneko-note/img/transparent-mimneko.png">
@@ -12,9 +12,27 @@
   <!-- fontawesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- MathJax -->
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    };
+  </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <!-- 本ページ限定 -->
+  <!-- prism使うか -->
   <style>
+    pre {
+      background-color: var(--color-black);
+      color: var(--color-white);
+      font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+      font-size: 1rem;
+      padding: .5rem;
+      border-radius: .2rem;
+      /*line-height: 1.1rem;*/
+      overflow: auto; /* スクロールバーを表示 */
+    }
     /* -----------------------------------------
       増減表
     ----------------------------------------- */
@@ -30,14 +48,17 @@
       min-width: 30px;
     }
   </style>
+  <!-- クリックするとコピー -->
+  <link rel="stylesheet" href="https://mimneko.github.io/mimneko-note/css/data-copy.css">
+  <script id="data-copy-script" async src="https://mimneko.github.io/mimneko-note/js/data-copy.js"></script>
 </head>
 
 <body>
   <main>
     <div id="content">
-      <h1 id="article-title">MathJax使用例</h1>
+      <h1 id="article-title">高校数学用MathJax例</h1>
       <div id="article-information">
-        <div id="renewal-date" datetime="2024-04-28">2024-04-28</div>
+        <div id="renewal-date" datetime="2024-04-29">2024-04-29</div>
         <div id="author">みむねこ</div>
       </div>
 
@@ -47,28 +68,404 @@
             <li><a href="#h2-1">数式</a></li>
         </ol>
       </div>
-    
-      <h2 id="h2-1">数式</h2>
-      <p><mark>アインシュタイン</mark>は \( E=mc^2 \) の公式を導きました。</p>
-      <p>$$ 3 + 4 = 7 $$</p>
-      <p>
-        \begin{eqnarray}
-          i\hbar\frac{\partial}{\partial t}\psi(x,t)=
-          \left(-\frac{\hbar^2}{2m}+V(x)\right)\psi(x,t)
-        \end{eqnarray}
-      </p>
+
+      <h2>準備</h2>
+      <p>headタグ内に、以下のように書く。</p>
+      <pre><code data-copy>&lt;script&gt;
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  }
+};
+&lt;/script&gt;
+&lt;script id="MathJax-script" async 
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"&gt;
+&lt;/script&gt;
+</code></pre>
+
+      <p>ドルマーク2つだと、 $$ 3 + 4 = 7 $$ ディスプレイ形式に。</p>
+      <pre><code>&lt;p&gt;ドルマーク2つだと、 $$ 3 + 4 = 7 $$ ディスプレイ形式に。&lt;/p&gt;</code></pre>
+      <p>ドルマーク1つだと、 $ 3 + 4 = 7 $ インライン形式に。</p>
+      <pre><code>&lt;p&gt;ドルマーク1つだと、 $ 3 + 4 = 7 $ インライン形式に。&lt;/p&gt;</code></pre>
+      
+      <h2>数</h2>
+      <h3>分数</h3>
+      <h4>分数(小)</h4>
+      <p>$\frac{1}{2}$</p>
+      <pre><code>\frac{1}{2}</code></pre>
+      <h4>分数(大)</h4>
+      <p>$\dfrac{1}{2}$</p>
+      <pre><code>\dfrac{1}{2}</code></pre>
+      <pre><code>\displaystylefrac{1}{2}</code></pre>
+      <h4>分数と括弧</h4>
+      <p>$\left( -\frac{1}{2} \right)^2$</p>
+      <pre><code>\left( -\frac{1}{2} \right)^2</code></pre>
+      <h4>連分数</h4>
+      <p>$\frac{a+b}{c+\frac{d}{e}}$</p>
+      <pre><code>\frac{a+b}{c+\frac{d}{e}}</code></pre>
+      <p>$\cfrac{a+b}{c+\cfrac{d}{e}}$</p>
+      <pre><code>\cfrac{a+b}{c+\cfrac{d}{e}}</code></pre>
+      <h4>無限連分数</h4>
+      <p>$\begin{eqnarray}
+        1+\frac{1}{1+\frac{1}{1+\frac{1}{1+\ddots}}}
+        = \frac{1}{2} \left( 1+\sqrt{5} \right)
+        \end{eqnarray}$</p>
+      <pre><code>\begin{eqnarray}
+  1+\frac{1}{1+\frac{1}{1+\frac{1}{1+\ddots}}}
+  = \frac{1}{2} \left( 1+\sqrt{5} \right)
+\end{eqnarray}</code></pre>
+      <h3>小数</h3>
+      <h4>小数</h4>
+      <p>$0.123$</p>
+      <pre><code>0.123</code></pre>
+      <h4>循環小数</h4>
+      <p>$\frac{1}{11} = 0.\dot{0}\dot{9}$</p>
+      <pre><code>\frac{1}{11} = 0.\dot{0}\dot{9}</code></pre>
+      <h4>無限小数</h4>
+      <p>$\sqrt{2} = 1.4142 \cdots$</p>
+      <pre><code>\sqrt{2} = 1.4142 \cdots</code></pre>
+      <h3>無限大</h3>
+      <p>$\infty$</p>
+      <pre><code>\infty</code></pre>
+      <h3>絶対値</h3>
+      <p>$|x|$</p>
+      <pre><code>|x|</code></pre>
+      <pre><code>\vert x \vert</code></pre>
+      <h3>分数と絶対値</h3>
+      <p>$\left| \dfrac{x}{2} \right|$</p>
+      <pre><code>\left| \dfrac{x}{2} \right|</code></pre>
+      <h3>ガウス記号</h3>
+      <p>$[x]$</p>
+      <pre><code>[x]</code></pre>
+      <pre><code>\lbrack x \rbrack</code></pre>
+
+      <h2>四則演算</h2>
+      <h3>足す</h3>
+      <p>$1 + 2$</p>
+      <pre><code>1 + 2</code></pre>
+      <h3>引く</h3>
+      <p>$3 - 1$</p>
+      <pre><code>3 - 1</code></pre>
+      <h3>掛ける</h3>
+      <p>$2 \times 3$</p>
+      <pre><code>2 \times 3</code></pre>
+      <p>$a \cdot b = ab$</p>
+      <pre><code>a \cdot b = ab</code></pre>
+      <h3>割る</h3>
+      <p>$6 \div 3$</p>
+      <pre><code>6 \div 3</code></pre>
+      <h3>プラスマイナス</h3>
+      <p>$\pm 1$</p>
+      <pre><code>\pm 1</code></pre>
+      <h3>マイナスプラス</h3>
+      <p>$\mp 1$</p>
+      <pre><code>\mp 1</code></pre>
+      <h3>筆算</h3>
+      <h4>掛け算</h4>
+      <p>$\begin{array}{r}
+        67 \\[-3pt]
+        \underline{\times\phantom{0}63}\\[-3pt]
+        201 \\[-3pt]
+        \underline{\phantom{0}402\phantom{0}} \\[-3pt]
+        4221
+        \end{array}$</p>
+      <pre><code>\begin{array}{r}
+67 \\[-3pt]
+\underline{\times\phantom{0}63}\\[-3pt]
+201 \\[-3pt]
+\underline{\phantom{0}402\phantom{0}} \\[-3pt]
+4221
+\end{array}</code></pre>
+      <h4>割り算</h4>
+      <p>$\begin{array}{r}
+        7.6 \\[-3pt]
+      25\enclose{longdiv}{190\phantom{0}} \\[-3pt]
+        \underline{175\phantom{.0}} \\[-3pt]
+        15\phantom{.}0 \\[-3pt]
+        \underline{15\phantom{.}0} \\[-3pt]
+        \phantom{000}0
+      \end{array}$</p>
+      <pre><code>\begin{array}{r}
+  7.6 \\[-3pt]
+25\enclose{longdiv}{190\phantom{0}} \\[-3pt]
+  \underline{175\phantom{.0}} \\[-3pt]
+  15\phantom{.}0 \\[-3pt]
+  \underline{15\phantom{.}0} \\[-3pt]
+  \phantom{000}0
+\end{array}</code></pre>
+      <h3>合同式</h3>
+      <p>$a \equiv b \mod n$</p>
+      <pre><code>a \equiv b \mod n</code></pre>
+      <p>$a \equiv b \pmod n$</p>
+      <pre><code>a \equiv b \pmod n</code></pre>
+      <h3>比例</h3>
+      <p>$x \propto y$</p>
+      <pre><code>x \propto y</code></pre>
+      
+      <h2>大小</h2>
+      <h3>大なり</h3>
+      <p>$a \gt b$</p>
+      <pre><code>a \gt b</code></pre>
+      <h3>大なりイコール</h3>
+      <p>$a \geqq b$</p>
+      <pre><code>a \geqq b</code></pre>
+      <h3>小なり</h3>
+      <p>$a \lt b$</p>
+      <pre><code>a \lt b</code></pre>
+      <h3>小なりイコール</h3>
+      <p>$a \leqq b$</p>
+      <pre><code>a \leqq b</code></pre>
+      <h3>イコール</h3>
+      <p>$a = b$</p>
+      <pre><code>a = b</code></pre>
+      <h3>ノットイコール</h3>
+      <p>$a \neq b$</p>
+      <pre><code>a \neq b</code></pre>
+      <h3>ニアリーイコール</h3>
+      <p>$a \fallingdotseq b$</p>
+      <pre><code>a \fallingdotseq b</code></pre>
+      <h3>十分大きい</h3>
+      <p>$a \gg b$</p>
+      <pre><code>a \gg b</code></pre>
+      <h3>十分小さい</h3>
+      <p>$a \ll b$</p>
+      <pre><code>a \ll b</code></pre>
+
+      <h2>複数行数式</h2>
+      <h3>イコールで縦に揃える</h3>
+      <p>$\begin{eqnarray}
+        x + 2x &=& 3 \\
+        x &=& 1
+      \end{eqnarray}$</p>
+      <pre><code>\begin{eqnarray}
+  x + 2x &=& 3 \\
+  x &=& 1
+\end{eqnarray}</code></pre>
+      <h3>連立方程式</h3>
+      <p>$\begin{eqnarray}
+        \left\{
+          \begin{array}{l}
+            x + y = 10 \\
+            2x + 4y = 32
+          \end{array}
+        \right.
+      \end{eqnarray}$</p>
+      <pre><code>\begin{eqnarray}
+  \left\{
+    \begin{array}{l}
+      x + y = 10 \\
+      2x + 4y = 32
+    \end{array}
+  \right.
+\end{eqnarray}</code></pre>
+      <h3>場合分け</h3>
+      <p>$\begin{eqnarray}
+        |x|
+         =
+          \begin{cases}
+            x & ( x \geqq 0 ) \\
+            -x & ( x \lt 0 )
+          \end{cases}
+        \end{eqnarray}$</p>
+      <pre><code>\begin{eqnarray}
+|x|
+  =
+  \begin{cases}
+    x & ( x \geqq 0 ) \\
+    -x & ( x \lt 0 )
+  \end{cases}
+\end{eqnarray}</code></pre>
+
+      <h2>集合</h2>
+      <h3>属する</h3>
+      <p>$x \in A$</p>
+      <pre><code>x \in A</code></pre>
+      <p>$A \ni x$</p>
+      <pre><code>A \ni x</code></pre>
+      <h3>属していない</h3>
+      <p>$x \notin A$</p>
+      <pre><code>x \notin A</code></pre>
+      <h3>部分集合</h3>
+      <p>$A \subset B$</p>
+      <pre><code>A \subset B</code></pre>
+      <p>$A \supset B$</p>
+      <pre><code>A \supset B</code></pre>
+      <h3>部分集合でない</h3>
+      <p>$A \not \subset B$</p>
+      <pre><code>A \not \subset B</code></pre>
+      <h3>共通部分</h3>
+      <p>$A \cap B$</p>
+      <pre><code>A \cap B</code></pre>
+      <h3>和集合</h3>
+      <p>$A \cup B$</p>
+      <pre><code>A \cup B</code></pre>
+      <h3>空集合</h3>
+      <p>$\varnothing$</p>
+      <pre><code>\varnothing</code></pre>
+      <p>$\emptyset$</p>
+      <pre><code>\emptyset</code></pre>
+      <h3>補集合</h3>
+      <p>$\overline{ A }$</p>
+      <pre><code>\overline{ A }</code></pre>
+      <h3>ド・モルガンの法則</h3>
+      <p>$\overline{ (A\cap B) } = \overline{ A } \cup \overline{ B }$</p>
+      <pre><code>\overline{ (A\cap B) } = \overline{ A } \cup \overline{ B }</code></pre>
+      <h3>自然数全体の集合</h3>
+      <p>$\mathbb{ N }$</p>
+      <pre><code>\mathbb{ N }</code></pre>
+      <h3>整数全体の集合</h3>
+      <p>$\mathbb{ Z }$</p>
+      <pre><code>\mathbb{ Z }</code></pre>
+      <h3>有理数全体の集合</h3>
+      <p>$\mathbb{ Q }$</p>
+      <pre><code>\mathbb{ Q }</code></pre>
+      <h3>実数全体の集合</h3>
+      <p>$\mathbb{ R }$</p>
+      <pre><code>\mathbb{ R }</code></pre>
+
+      <h2>論理</h2>
+      <h3>ならば</h3>
+      <p>$P \Rightarrow Q$</p>
+      <pre><code>P \Rightarrow Q</code></pre>
+      <p>$P \Leftarrow  Q$</p>
+      <pre><code>P \Leftarrow  Q</code></pre>
+      <h3>同値</h3>
+      <p>$P \iff Q$</p>
+      <pre><code>P \iff Q</code></pre>
+      <p>$P \Leftrightarrow Q$</p>
+      <pre><code>P \Leftrightarrow Q</code></pre>
+      <h3>よって、ゆえに</h3>
+      <p>$\therefore$</p>
+      <pre><code>\therefore</code></pre>
+      <h3>なぜならば</h3>
+      <p>$\because$</p>
+      <pre><code>\because</code></pre>
+      <h3>否定</h3>
+      <p>$\overline{ P }$</p>
+      <pre><code>\overline{ P }</code></pre>
+
+      <h2>順列と組み合わせ</h2>
+      <h3>順列</h3>
+      <p>${}_n \mathrm{ P }_k$</p>
+      <pre><code>{}_n \mathrm{ P }_k</code></pre>
+      <h3>組み合わせ</h3>
+      <p>${}_n \mathrm{ C }_k$</p>
+      <pre><code>{}_n \mathrm{ C }_k</code></pre>
+      <h3>階乗</h3>
+      <p>$n!$</p>
+      <pre><code>n!</code></pre>
+      <h3>組み合わせの公式</h3>
+      <p>$\begin{eqnarray}
+        {}_n \mathrm{ C }_k
+         = \frac{ n! }{ k! ( n - k )! }
+        \end{eqnarray}$</p>
+      <pre><code>\begin{eqnarray}
+{}_n \mathrm{ C }_k
+  = \frac{ n! }{ k! ( n - k )! }
+\end{eqnarray}</code></pre>
+      <h3>順列の公式</h3>
+      <p>$\begin{eqnarray}
+        {}_n \mathrm{ P }_k
+         = n \cdot ( n - 1 ) \cdots ( n - k + 1 )
+         = \frac{ n! }{ ( n - k )! }
+        \end{eqnarray}$</p>
+      <pre><code>\begin{eqnarray}
+{}_n \mathrm{ P }_k
+  = n \cdot ( n - 1 ) \cdots ( n - k + 1 )
+  = \frac{ n! }{ ( n - k )! }
+\end{eqnarray}</code></pre>
+
+      <h2>総和・総乗</h2>
+      <h3>総和</h3>
+      <p>$\sum_{i=1}^{n} a_i$</p>
+      <pre><code>\sum_{i=1}^{n} a_i</code></pre>
+      <p>$\displaystyle \sum_{i=1}^n a_i$</p>
+      <pre><code>\displaystyle \sum_{i=1}^n a_i</code></pre>
+      <h3>総和のイメージ</h3>
+      <p>$\begin{eqnarray}
+        \sum_{ k = 1 }^{ n } k^2
+         = \overbrace{ 1^2 + 2^2 + \cdots + n^2 }^{ n }
+         = \frac{ 1 }{ 6 } n ( n + 1 ) ( 2n + 1 )
+        \end{eqnarray}$</p>
+      <pre><code>\begin{eqnarray}
+\sum_{ k = 1 }^{ n } k^2
+  = \overbrace{ 1^2 + 2^2 + \cdots + n^2 }^{ n }
+  = \frac{ 1 }{ 6 } n ( n + 1 ) ( 2n + 1 )
+\end{eqnarray}</code></pre>
+
+      <h2>指数・対数</h2>
+      <h3>べき乗</h3>
+      <p>$2^3$</p>
+      <pre><code>2^3</code></pre>
+      <p>$e^{ i \pi }$</p>
+      <pre><code>e^{ i \pi }</code></pre>
+      <h3>平方根</h3>
+      <p>$\sqrt{ 2 }$</p>
+      <pre><code>\sqrt{ 2 }</code></pre>
+      <p>$\sqrt{ \mathstrut a } + \sqrt{ \mathstrut b }$</p>
+      <pre><code>\sqrt{ \mathstrut a } + \sqrt{ \mathstrut b }</code></pre>
+      <h3>3乗根</h3>
+      <p>$\sqrt[ 3 ]{ x }$</p>
+      <pre><code>\sqrt[ 3 ]{ x }</code></pre>
+      <h3>対数</h3>
+      <h4>自然対数</h4>
+      <p>$\log x$</p>
+      <pre><code>\log x</code></pre>
+      <h4>常用対数</h4>
+      <p>$\log_{ 10 } x$</p>
+      <pre><code>\log_{ 10 } x</code></pre>
+
+      <h2>図形</h2>
+      <h3></h3>
+      <p>$$</p>
+      <pre><code></code></pre>
+      <h3></h3>
+      <p>$$</p>
+      <pre><code></code></pre>
+      <h3></h3>
+      <p>$$</p>
+      <pre><code></code></pre>
+      <h3></h3>
+      <p>$$</p>
+      <pre><code></code></pre>
+      <h3></h3>
+      <p>$$</p>
+      <pre><code></code></pre>
+      
+      <h2>三角関数</h2>
+      <h2>複素数</h2>
+      <h2>極限</h2>
+      <h2>微分・積分</h2>
+      <h2>ベクトル</h2>
+      <h2>行列</h2>
+      <h2>表</h2>
+      <h2>可換図式</h2>
+      <h2>線</h2>
+      <h2>矢印</h2>
+      <h2>括弧</h2>
+      <h2>点</h2>
+      <h2>丸</h2>
+      <h2>三角形</h2>
+      <h2>四角形</h2>
+      <h2>二項演算</h2>
+      <h2>一般的な記号</h2>
+      <h2></h2>
+      <h2></h2>
+
+      <h2>使用例</h2>
+      <h3>2次方程式の解の公式</h3>
       <div class="koushiki-box">
         <div class="box-title">2次方程式の解の公式</div>
         <p>
-          2次方程式 \( ax^2+bx+c=0 \) の解は、 \( b^2-4ac\geqq0 \) のとき<br>
+          2次方程式 $ ax^2+bx+c=0 $ の解は、 $ b^2-4ac\geqq0 $ のとき<br>
           \begin{equation*}
             x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}
           \end{equation*}
         </p>
       </div>
 
-      <h2>増減表</h2>
-      <h3>htmlのtable + MathJax</h3>
+      <h3>増減表</h3>
+      <h4>htmlのtable + MathJax</h4>
       <table class="derivative-test-chart">
         <tr>
             <td>\(x\)</td>
@@ -95,7 +492,7 @@
             <td>\(\nearrow\)</td>
         </tr>
       </table>
-      <h3>MathJaxだけ</h3>
+      <h4>MathJaxのarrayだけ</h4>
       <p>
       \begin{array}{|c|c|c|c|c|c|}
         \hline
@@ -106,6 +503,15 @@
         f(x)  & \nearrow & e & \searrow & -e & \nearrow \\
         \hline
       \end{array}
+      </p>
+      
+      <h3>他</h3>
+      <p><mark>アインシュタイン</mark>は $ E=mc^2 $ の公式を導きました。</p>
+      <p>
+        \begin{eqnarray}
+          i\hbar\frac{\partial}{\partial t}\psi(x,t)=
+          \left(-\frac{\hbar^2}{2m}+V(x)\right)\psi(x,t)
+        \end{eqnarray}
       </p>
 
       <h2 id="reference">参考</h2>
