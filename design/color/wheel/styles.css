@@ -1,0 +1,43 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.color-wheel {
+  width: 470px;
+  height: 470px;
+  position: relative;
+  margin-right: 70px;
+  margin-bottom: 70px;
+}
+
+.color-circle {
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.color0 { transform: rotate(0deg) translate(175px) rotate(-0deg); }
+.color1 { transform: rotate(30deg) translate(175px) rotate(-30deg); }
+.color2 { transform: rotate(60deg) translate(175px) rotate(-60deg); }
+.color3 { transform: rotate(90deg) translate(175px) rotate(-90deg); }
+.color4 { transform: rotate(120deg) translate(175px) rotate(-120deg); }
+.color5 { transform: rotate(150deg) translate(175px) rotate(-150deg); }
+.color6 { transform: rotate(180deg) translate(175px) rotate(-180deg); }
+.color7 { transform: rotate(210deg) translate(175px) rotate(-210deg); }
+.color8 { transform: rotate(240deg) translate(175px) rotate(-240deg); }
+.color9 { transform: rotate(270deg) translate(175px) rotate(-270deg); }
+.color10 { transform: rotate(300deg) translate(175px) rotate(-300deg); }
+.color11 { transform: rotate(330deg) translate(175px) rotate(-330deg); }
