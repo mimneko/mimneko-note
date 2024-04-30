@@ -9,6 +9,7 @@
   position: relative;
   padding: .3em .3em .3em 1em;
   color: #333333;
+  margin-bottom: 0;
 }
 
 .folder-tree li::before,
