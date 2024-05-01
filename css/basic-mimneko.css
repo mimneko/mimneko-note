@@ -58,7 +58,7 @@ main {
   color: var(--color-gray);
   align-items: baseline;
   margin-top: -1rem;
-  margin-right: 1rem;
+  margin-right: .5rem;
   font-size: small;
 }
 
