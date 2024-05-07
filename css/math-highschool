@@ -1,0 +1,19 @@
+/* -----------------------------------------
+  証明
+----------------------------------------- */
+.shomei-box {
+  margin: 0 .5rem;
+  padding: 1px 1rem;
+  border-left: 2px dotted var(--color-main);
+  border-right: 2px dotted var(--color-main);
+}
+.shomei-box p {
+  padding: 0;
+  margin: 1rem 0;
+}
+.shomei-box .shomei-title {
+  font-weight: bold;
+}
+.shomei-box .shomei-qed {
+  text-align: right;
+}
