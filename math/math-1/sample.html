@@ -23,30 +23,6 @@
   <!-- 本ページ限定 -->
   <!-- prism使うか -->
   <style>
-    pre {
-      background-color: var(--color-black);
-      color: var(--color-white);
-      font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
-      font-size: 1rem;
-      padding: .5rem;
-      border-radius: .2rem;
-      /*line-height: 1.1rem;*/
-      overflow: auto; /* スクロールバーを表示 */
-    }
-    /* -----------------------------------------
-      増減表
-    ----------------------------------------- */
-    .derivative-test-chart {
-      border-collapse: collapse;
-      margin: 0 auto;
-    }
-
-    .derivative-test-chart td {
-      border: 1px solid black;
-      padding: 5px;
-      text-align: center;
-      min-width: 30px;
-    }
     /* -----------------------------------------
       証明
     ----------------------------------------- */
@@ -132,34 +108,6 @@
       <h3>問題</h3>
 
       <h3>増減表</h3>
-      <h4>htmlのtable + MathJax</h4>
-      <table class="derivative-test-chart">
-        <tr>
-            <td>\(x\)</td>
-            <td>\(\cdots\)</td>
-            <td>\(-1\)</td>
-            <td>\(\cdots\)</td>
-            <td>\(1\)</td>
-            <td>\(\cdots\)</td>
-        </tr>
-        <tr>
-            <td>\(f'(x)\)</td>
-            <td>\(+\)</td>
-            <td>\(0\)</td>
-            <td>\(-\)</td>
-            <td>\(0\)</td>
-            <td>\(+\)</td>
-        </tr>
-        <tr>
-            <td>\(f(x)\)</td>
-            <td>\(\nearrow\)</td>
-            <td>\(e\)</td>
-            <td>\(\searrow\)</td>
-            <td>\(e\)</td>
-            <td>\(\nearrow\)</td>
-        </tr>
-      </table>
-      <h4>MathJaxのarrayだけ</h4>
       <p>
       \begin{array}{|c|c|c|c|c|c|}
         \hline
@@ -171,24 +119,10 @@
         \hline
       \end{array}
       </p>
-      
-      <h3>他</h3>
-      <p><mark>アインシュタイン</mark>は $ E=mc^2 $ の公式を導きました。</p>
-      <p>
-        シュレディンガー方程式は次で表される。
-        \begin{eqnarray}
-          i\hbar\frac{\partial}{\partial t}\psi(x,t)=
-          \left(-\frac{\hbar^2}{2m}+V(x)\right)\psi(x,t)
-        \end{eqnarray}
-      </p>
 
       <h2 id="reference">参考</h2>
-      <h3>MathJax</h3>
-      <h4>一例</h4>
-      <p>使用例も載っているのでおすすめ。</p>
       <ul class="reference-list">
-        <li><a href="https://www.tohoho-web.com/ex/mathjax.html" target="_blank">とほほのMathJax入門 - とほほのWWW入門</a>, 参照<time datetime="2024-04-27">2024-04-27</time></li>
-        <li><a href="https://easy-copy-mathjax.nakaken88.com/table/" target="_blank">表 | Easy Copy Mathjax</a>, 参照<time datetime="2024-04-28">2024-04-28</time></li>
+        <li><a href="https://w3e.kanazawa-it.ac.jp/math/category/kansuu/2jihouteisiki/henkan-tex.cgi?target=/math/category/kansuu/2jihouteisiki/kainokousiki.html" target="_blank">2次方程式の解の公式</a>, 参照<time datetime="2024-05-08">2024-05-08</time></li>
       </ul>
 
     </div>
