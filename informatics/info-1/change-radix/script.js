@@ -2,6 +2,10 @@ function convertNumbers(inputType) {
 
     // 入力値を取得
     var inputValue = document.getElementById(inputType + "Input").value.trim();
+    // 全角数字を半角数字に変換
+    inputValue = inputValue.replace(/[０-９]/g, function(s) {
+        return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
+    });
     if (inputValue === "") {
         return;
     }
