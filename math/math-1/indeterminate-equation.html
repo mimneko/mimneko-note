@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>不定方程式の解き方</title>
+  <!-- ファビコン -->
+  <link rel="icon" href="https://mimneko.github.io/mimneko-note/img/transparent-mimneko.png">
+  <link rel="apple-touch-icon" href="https://mimneko.github.io/mimneko-note/img/transparent-mimneko.png">
+  <!-- 基本スタイル -->
+  <link rel="stylesheet" href="https://mimneko.github.io/mimneko-note/css/basic-mimneko.css">
+  <!-- fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- 数学用 -->
+  <script id="MathJax-plus-script" async src="https://mimneko.github.io/mimneko-note/js/mathjax-plus.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link rel="stylesheet" href="https://mimneko.github.io/mimneko-note/css/math-highschool.css">
+  <!-- クリックするとコピー -->
+  <link rel="stylesheet" href="https://mimneko.github.io/mimneko-note/css/data-copy.css">
+  <script id="data-copy-script" async src="https://mimneko.github.io/mimneko-note/js/data-copy.js"></script>
+</head>
+
+<body>
+  <main>
+    <div id="content">
+      <h1 id="article-title">不定方程式の解き方</h1>
+      <div id="article-information">
+        <div id="renewal-date" datetime="2024-05-08">2024-05-08</div>
+        <div id="author">みむねこ</div>
+      </div>
+
+      <p>方程式 $2x+3y-5z=1 \cdots$&#9312; について、次の各問いに答えよ。ただし、問１、問３は答えのみ解答用紙に記入せよ。</p>
+
+      <h3>問１ $z=0$ のとき、方程式&#9312;をみたす整数 $x,y$ の組を１組求めよ。</h3>
+      <p>方程式&#9312;に $z=0$ を代入すると、 $2x+3y=1$ となる。</p>
+      <p>$x=-1,y=1$</p>
+
+      <h3>問２ $z=2$ のとき、方程式&#9312;をみたす整数 $x,y$ の組をすべて求めよ。</h3>
+      <p>$z=2$ のとき、 $2x+3y=11\cdots$&#9313;</p>
+      <p>また問１より、 $2\cdot(-1)+3\cdot1=1$ となるので、両辺に$11$をかけて $2 \cdot (-11)+3 \cdot 11 = 11\cdots$&#9314; </p>
+      <p>&#9313;と&#9314;を辺々引いて、 $2(x+11)+3(y-11) = 0$</p>
+      <p>よって、 $2(x+11)=-3(y-11)$</p>
+      <p>$2$と$3$は互いに素であるから、 $x+11$ は $3$ の倍数である。</p>
+      <p>したがって、整数 $k$ を用いて $x+11=3k$ と表せる。</p>
+      <p>このとき、 $y-11=-2k$</p>
+      <p>以上より、 $x=3k-11,y=-2k+11$ （$k$ は任意の整数）</p>
+
+      <h3>問３ 方程式&#9312;をみたす整数 $x,y,z$ の組をすべて求めよ。</h3>
+      <p>方程式&#9312;は変形すると $2x+3y=5z+1$ なので、</p>
+      <p>整数 $z=l$ として問２の $11$ を $5z+1$ に置換すると、</p>
+      <p> $x=3k-(5l+1),y=-2k+(5l+1)$</p>
+      <p> $x=3k-5l-1,y=-2k+5l+1,z=l$ （$k,l$ は任意の整数）</p>
+
+      <h2 id="reference">参考</h2>
+      <ul class="reference-list">
+        <li>平成29年度　静岡県教員採用選考試験　高校数学　試験問題　６</li>
+      </ul>
+
+    </div>
+  </main>
+
+</body>
+</html>
