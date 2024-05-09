@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>三角関数に関する公式</title>
+  <!-- ファビコン -->
+  <link rel="icon" href="https://mimneko.github.io/mimneko-note/img/transparent-mimneko.png">
+  <link rel="apple-touch-icon" href="https://mimneko.github.io/mimneko-note/img/transparent-mimneko.png">
+  <!-- 基本スタイル -->
+  <link rel="stylesheet" href="https://mimneko.github.io/mimneko-note/css/basic-mimneko.css">
+  <!-- fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- 数学用 -->
+  <script id="MathJax-plus-script" async src="https://mimneko.github.io/mimneko-note/js/mathjax-plus.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link rel="stylesheet" href="https://mimneko.github.io/mimneko-note/css/math-highschool.css">
+  <!-- クリックするとコピー -->
+  <link rel="stylesheet" href="https://mimneko.github.io/mimneko-note/css/data-copy.css">
+  <script id="data-copy-script" async src="https://mimneko.github.io/mimneko-note/js/data-copy.js"></script>
+</head>
+
+<body>
+  <main>
+    <div id="content">
+      <h1 id="article-title">三角関数に関する公式</h1>
+      <div id="article-information">
+        <div id="renewal-date" datetime="2024-05-09">2024-05-09</div>
+        <div id="author">みむねこ</div>
+      </div>
+
+      <div class="koushiki-box">
+        <div class="koushiki-title box-title">加法定理</div>
+        <p class="koushiki-content">
+          \begin{eqnarray}
+          \sin(\alpha\pm\beta) &=& \sin\alpha\cos\beta\pm\cos\alpha\sin\beta \\
+          \cos(\alpha\pm\beta) &=& \cos\alpha\cos\beta\mp\sin\alpha\sin\beta \\
+          \tan(\alpha\pm\beta) &=& \frac{\tan\alpha\pm\tan\beta}{1\mp\tan\alpha\tan\beta}
+          \end{eqnarray}
+        </p>
+      </div>
+
+      <div class="koushiki-box">
+        <div class="koushiki-title box-title">2倍角の公式</div>
+        <p class="koushiki-content">
+          \begin{eqnarray}
+          \sin2\alpha &=& 2\sin\alpha\cos\alpha \\
+          \cos2\alpha &=& \cos^2\alpha-\sin^2\alpha \\
+                      &=& 1-2\sin^2\alpha \\
+                      &=& 2\cos^2\alpha-1 \\
+          \tan2\alpha &=& \frac{2\tan\alpha}{1-\tan^2\alpha}
+          \end{eqnarray}
+        </p>
+      </div>
+
+      <div class="koushiki-box">
+        <div class="koushiki-title box-title">半角の公式</div>
+        <p class="koushiki-content">
+          \begin{eqnarray}
+          \sin^2\frac{\alpha}{2} &=& \frac{1-\cos\alpha}{2} \\
+          \cos^2\frac{\alpha}{2} &=& \frac{1+\cos\alpha}{2} \\
+          \tan^2\frac{\alpha}{2} &=& \frac{1-\cos\alpha}{1+\cos\alpha}
+          \end{eqnarray}
+        </p>
+      </div>
+
+      <div class="koushiki-box">
+        <div class="koushiki-title box-title">3倍角の公式</div>
+        <p class="koushiki-content">
+          \begin{eqnarray}
+          \sin3\alpha &=&  &3\sin\alpha&-4\sin^3\alpha \\
+          \cos3\alpha &=& -&3\cos\alpha&+4\cos^3\alpha
+          \end{eqnarray}
+        </p>
+      </div>
+
+      <div class="koushiki-box">
+        <div class="koushiki-title box-title">積和の公式</div>
+        <p class="koushiki-content">
+          \begin{eqnarray}
+          \sin\alpha\cos\beta &=&  &\frac{1}{2}&\{\sin(\alpha+\beta)+\sin(\alpha-\beta)\} \\
+          \cos\alpha\sin\beta &=&  &\frac{1}{2}&\{\sin(\alpha+\beta)+\sin(\alpha-\beta)\} \\
+          \cos\alpha\cos\beta &=&  &\frac{1}{2}&\{\cos(\alpha+\beta)+\cos(\alpha-\beta)\} \\
+          \sin\alpha\sin\beta &=& -&\frac{1}{2}&\{\cos(\alpha+\beta)+\cos(\alpha-\beta)\}
+          \end{eqnarray}
+        </p>
+      </div>
+
+      <div class="koushiki-box">
+        <div class="koushiki-title box-title">和積の公式</div>
+        <p class="koushiki-content">
+          \begin{eqnarray}
+          \sin A+\sin B &=&  &2&\sin\frac{A+B}{2}\cos\frac{A-B}{2} \\
+          \sin A-\sin B &=&  &2&\cos\frac{A+B}{2}\sin\frac{A-B}{2} \\
+          \cos A+\cos B &=&  &2&\cos\frac{A+B}{2}\cos\frac{A-B}{2} \\
+          \cos A-\cos B &=& -&2&\sin\frac{A+B}{2}\sin\frac{A-B}{2}
+          \end{eqnarray}
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>
