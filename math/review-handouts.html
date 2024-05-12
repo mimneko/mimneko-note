@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>復習プリント</title>
+  <!-- ファビコン -->
+  <link rel="icon" href="https://mimneko.github.io/mimneko-note/img/transparent-mimneko.png">
+  <link rel="apple-touch-icon" href="https://mimneko.github.io/mimneko-note/img/mimneko.png">
+  <!-- reset.css destyle -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css">
+  <!-- 数学用 -->
+  <script id="MathJax-plus-script" async src="https://mimneko.github.io/mimneko-note/js/mathjax-plus.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link rel="stylesheet" href="https://mimneko.github.io/mimneko-note/css/math-highschool.css">
+  <!-- 本ページ限定 -->
+  <style>
+    body {
+      font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+      background-color: #fff;
+      color: #000;
+      margin: 0;
+    }
+
+    main {
+      margin-top: 0;
+      margin-bottom: 0;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      max-width: 844px;
+      background-color: #fff;
+    }
+
+    #content {
+      margin: 0 30px;
+      padding: 30px 0;
+    }
+
+    @media (max-width: 600px) {
+      #content {
+        margin: 0 10px;
+        padding: 10px 0;
+      }
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between; /* 左端と右端に要素を配置 */
+      align-items: center; /* 垂直方向に中央揃え */
+      border-bottom: solid 1px #000;
+      font-size: 12px;
+      padding-bottom: 5px;
+    }
+
+    .subject, .version, .page {
+      width: 33.33%; /* 各要素の幅を均等に分割 */
+      text-align: center;
+    }
+
+    .subject {
+      text-align: left;
+    }
+
+    .page {
+      text-align: right;
+    }
+
+    h3 {
+      font-weight: bold;
+      font-size: 20px;
+      padding: 5px 0;
+    }
+
+    h2 {
+      counter-reset: h3-counter; /* h2ごとにカウンターをリセット */
+    }
+
+    h3 {
+      counter-increment: h3-counter; /* カウンターを1つ増やす */
+      padding-left: 2em;
+      text-indent: -2em;
+    }
+
+    h3::before {
+      content: "問" counter(h3-counter); /* カウンターの値を表示 */
+      margin-right: .5em;
+    }
+
+    h3 {
+      counter-reset: h4-counter; /* h2ごとにカウンターをリセット */
+    }
+
+    h4 {
+      counter-increment: h4-counter; /* カウンターを1つ増やす */
+      padding-left: 2em;
+      text-indent: -2em;
+      margin-bottom: 5em; 
+    }
+
+    h4::before {
+      content: "(" counter(h4-counter) ")"; /* カウンターの値を表示 */
+      margin-right: .8em;
+    }
+
+    .properties {
+      display: flex;
+      justify-content: space-between; /* 左端と右端に要素を配置 */
+      align-items: center; /* 垂直方向に中央揃え */
+      border-bottom: solid 1px #000;
+      margin-bottom: 5cm;
+    }
+
+    .score {
+      padding: 18px 10px 5px 100px;
+      border: solid 1px #000;
+    }
+
+    @media print {
+      @page {
+        size: B5;
+      }
+
+      body,
+      main {
+        background-color: transparent;
+      }
+
+      #content {
+        margin: 0;
+        padding: 0;
+        background-color: #fff;
+      }
+
+      /* ヘッダー、フッターなどを非表示にする */
+      header, footer, nav, aside, .no-print {
+        display: none;
+      }
+
+      .break,
+      .header {
+        break-before: page;
+      }
+
+      .properties {
+        margin-bottom: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div id="content">
+
+      <h2></h2>
+      <h3>次の2次不等式を解け。</h3>
+      <h4>$-x^2+3x+1\gt0$禁止伝説を再起の祈りで復活させまくれば、こちらだけ実質禁伝3体で戦えるので最強に決まっている説禁止伝説を再起の祈りで復活させまくれば、こちらだけ実質禁伝3体で戦えるので最強に決まっている説禁止伝説を再起の祈りで復活させまくれば、こちらだけ実質禁伝3体で戦えるので最強に決まっている説</h4>
+      <h4>禁止伝説を再起の祈りで復活させまくれば、こちらだけ実質禁伝3体で戦えるので最強に決まっている説禁止伝説を再起の祈りで復活させまくれば、こちらだけ実質禁伝3体で戦えるので最強に決まっている説禁止伝説を再起の祈りで復活させまくれば、こちらだけ実質禁伝3体で戦えるので最強に決まっている説</h4>
+      <div class="properties"></div>
+
+      <h2></h2>
+      <h3>次の2次不等式を解け。</h3>
+      <h4>$x^2-7x+6=0$</h4>
+      <p>
+      \begin{eqnarray}
+        x^2-7x+6 &=& (x-1)(x-6) \\
+        &=& 0 \\
+        x &=& 1,6
+      \end{eqnarray}
+      </p>
+      <h4>$-x^2+3x+1\gt0$</h4>
+      <h4>$-x^2+3x+1\gt0$</h4>
+      <div class="properties"></div>
+
+      <h2></h2>
+      <h3>次の2次不等式を解け。</h3>
+      <h4>$-x^2+3x+1\gt0$</h4>
+      <h4>$-x^2+3x+1\gt0$</h4>
+      <h4>$-x^2+3x+1\gt0$</h4>
+      <h4>$-x^2+3x+1\gt0$</h4>
+      <div class="properties"></div>
+      
+      <h2></h2>
+      <h3>次の2次不等式を解け。</h3>
+      <h4>$-x^2+3x+1\gt0$</h4>
+      <h4>$-x^2+3x+1\gt0$</h4>
+      <h4>$-x^2+3x+1\gt0$</h4>
+      <h4>$-x^2+3x+1\gt0$</h4>
+      <div class="properties"></div>
+      
+      <h2></h2>
+      <h3>次の2次不等式を解け。</h3>
+      <h4>$-x^2+3x+1\gt0$</h4>
+      <h4>$-x^2+3x+1\gt0$</h4>
+      <h4>$-x^2+3x+1\gt0$</h4>
+      <h3>禁止伝説を再起の祈りで復活させまくれば、こちらだけ実質禁伝3体で戦えるので最強に決まっている説禁止伝説を再起の祈りで復活させまくれば、こちらだけ実質禁伝3体で戦えるので最強に決まっている説禁止伝説を再起の祈りで復活させまくれば、こちらだけ実質禁伝3体で戦えるので最強に決まっている説</h3>
+      <h4>$-x^2+3x+1\gt0$</h4>
+      <div class="properties"></div>
+
+    </div>
+  </main>
+  
+  <script>
+    // カウンター
+    var h2Counter = 0;/*
+    var h3Counter = 0;
+    var h4Counter = 0;
+
+    // すべてのh3とh4タグを取得
+    var h2AndH3AndH4Tags = document.querySelectorAll('h2, h3, h4');
+
+    // 各h3とh4タグに対して処理を実行
+    h2AndH3AndH4Tags.forEach(function(tag) {
+        // タグのテキストを取得
+        var text = tag.textContent;
+        
+        if (tag.tagName === 'H2') { // h2の場合、h2とh3のカウンターをリセット
+          h2Counter++;
+          h3Counter = 0;
+        } else if (tag.tagName === 'H3') { // h3の場合、h3とh4のカウンターをリセット
+          h3Counter++;
+          h4Counter = 0;
+        } else if (tag.tagName === 'H4') { // h4の場合、h4のカウンターをリセット
+          h4Counter++;
+        }
+
+        // カウンターを追加したテキストを作成
+        var newText;
+        if (tag.tagName === 'H2') {
+          newText = text;
+        } else if (tag.tagName === 'H3') {
+          newText = "問" + h3Counter + "　" + text;
+        } else if (tag.tagName === 'H4') { // h4
+          newText = "(" + h4Counter + ")　" + text;
+        }
+
+        // タグのテキストを更新
+        tag.textContent = newText;
+    });*/
+    
+    var subject = "数学Ⅰ";
+    var version = "復習プリントv1.0.0";
+    
+    var h2Tags = document.querySelectorAll('h2');
+    h2Counter = 0;
+    h2Tags.forEach(function(h2Tag) {
+      h2Counter++;
+      var newHTML = '<h2 class="header"><div class="subject">数学Ⅰ</div><div class="version">復習プリントv1.0.0</div><div class="page">その' + h2Counter + '</div></h2>';
+      h2Tag.outerHTML = newHTML;
+    });
+    
+    // 各<div class="properties"></div>に対して処理を実行
+    var propertiesDivs = document.querySelectorAll('div.properties');
+    propertiesDivs.forEach(function(div) {
+      var newHTML = '<div class="properties"><span>氏名：</span><span>　　　組　　　番</span><span class="score">点</span></div>';
+      div.outerHTML = newHTML;
+    });
+
+  </script>
+</body>
+</html>
