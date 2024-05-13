@@ -10,7 +10,13 @@
   <!-- reset.css destyle -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css">
   <!-- 数学用 -->
-  <script id="MathJax-plus-script" async src="https://mimneko.github.io/mimneko-note/js/mathjax-plus.js"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    };
+  </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <link rel="stylesheet" href="https://mimneko.github.io/mimneko-note/css/math-highschool.css">
   <!-- 本ページ限定 -->
