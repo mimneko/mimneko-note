@@ -271,6 +271,12 @@ ol.reference-list li {
 /* -----------------------------------------
   他
 ----------------------------------------- */
+
+p {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 mark {
   font-weight: bold;
   background: linear-gradient(transparent 60%, #f9c270 0%);
