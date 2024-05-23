@@ -4,6 +4,7 @@
 .MathJax {
   padding-bottom: 5px;
   overflow-x: auto;
+  overflow-y: hidden;
 }/*
 .MathJax::-webkit-scrollbar-track {
   background-color: transparent;
