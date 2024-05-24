@@ -3,7 +3,8 @@
 ----------------------------------------- */
 .MathJax {
   padding-bottom: 5px;
-  overflow-x: auto;
+  /*overflow-x: auto;*/
+  overflow-x: visible;
   overflow-y: hidden;
 }/*
 .MathJax::-webkit-scrollbar-track {
