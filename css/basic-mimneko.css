@@ -161,6 +161,11 @@ li {
 @media print {
   #toc {
     background-image: none;
+  }
+}
+
+@media (max-width: 600px) {
+  #toc {
     width: 90%;
   }
 }
