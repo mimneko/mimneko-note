@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>印刷用プリント</title>
+    <!-- ファビコン -->
+    <link rel="icon" href="https://mimneko.github.io/mimneko-note/img/transparent-mimneko.png">
+    <link rel="apple-touch-icon" href="https://mimneko.github.io/mimneko-note/img/mimneko.png">
+    <!-- reset.css destyle -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css">
+    <!-- 数学用 -->
+    <script>
+    MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="https://mimneko.github.io/mimneko-note/css/math-highschool.css">
+    <!-- 本ページ限定 -->
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header, footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f0f0f0;
+            display: none;
+        }
+
+        main {
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            max-width: 844px;
+            background-color: #fff;
+        }
+
+        article {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: calc(100vh - 0px); /* ヘッダーとフッターの高さを引いた高さ */
+            padding: 20px 30px;
+            page-break-after: always; /* 各ページの最後にページ区切りを入れる */
+        }
+
+        @media (max-width: 600px) {
+            article {
+                margin: 0 10px;
+                padding: 10px 0;
+            }
+        }
+
+        .handout-header {
+            display: flex;
+            justify-content: space-between; /* 左端と右端に要素を配置 */
+            align-items: center; /* 垂直方向に中央揃え */
+            border-bottom: solid 1px #000;
+            font-size: 12px;
+            padding-bottom: 5px;
+        }
+
+        .subject, .version, .page {
+            width: 33.33%; /* 各要素の幅を均等に分割 */
+            text-align: center;
+        }
+
+        .subject {
+            text-align: left;
+        }
+
+        .page {
+            text-align: right;
+        }
+
+        h2 {
+            counter-reset: h3-counter; /* h2ごとにカウンターをリセット */
+        }
+
+        h3 {
+            font-weight: bold;
+            font-size: 20px;
+            padding-top: 5px;
+            counter-increment: h3-counter; /* カウンターを1つ増やす */
+            padding-left: 2em;
+            text-indent: -2em;
+            counter-reset: h4-counter; /* h2ごとにカウンターをリセット */
+        }
+
+        h3::before {
+            content: "問" counter(h3-counter); /* カウンターの値を表示 */
+            margin-right: .5em;
+        }
+
+        h4 {
+            padding: 5px 0;
+            counter-increment: h4-counter; /* カウンターを1つ増やす */
+            padding-left: 2em;
+            text-indent: -2em;
+        }
+
+        h4::before {
+            content: "(" counter(h4-counter) ")"; /* カウンターの値を表示 */
+            margin-right: .8em;
+        }
+
+        .handout-footer {
+            display: flex;
+            justify-content: space-between; /* 左端と右端に要素を配置 */
+            align-items: center; /* 垂直方向に中央揃え */
+            border-top: solid 1px #000;
+            margin-top: auto;
+            padding-top: 10px;
+        }
+
+        .score {
+            padding: 18px 10px 5px 100px;
+            border: solid 1px #000;
+        }
+
+        .ans {
+            color: orange;
+            padding-bottom: 2em;
+        }
+
+        @media print {
+            @page {
+                size: B5;
+                margin: 0;
+            }
+            header, footer {
+                page-break-before: always; /* 新しいページの前にヘッダーとフッターを強制的に配置 */
+                page-break-after: always;
+                display: none;
+            }
+
+            .no-print {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>
+            <span id="h1-subject">数学Ⅰ</span>
+            <span id="h1-type">復習プリント</span>
+            <span id="h1-version">v1.0.0</span>
+        </h1>
+    </header>
+    
+    <main>
+        <article>
+            <h3>次の2次不等式を解け。</h3>
+            <h4>$-x^2+3x+1\gt0$ 禁止伝説を再起の祈りで復活させまくれば、こちらだけ実質禁伝3体で戦えるので最強に決まっている説禁止伝説を再起の祈りで復活させまくれば、こちらだけ実質禁伝3体で戦えるので最強に決まっている説禁止伝説を再起の祈りで復活させまくれば、こちらだけ実質禁伝3体で戦えるので最強に決まっている説</h4>
+            <p class="ans">解答</p>
+            <h4>禁止伝説を再起の祈りで復活させまくれば、こちらだけ実質禁伝3体で戦えるので最強に決まっている説禁止伝説を再起の祈りで復活させまくれば、こちらだけ実質禁伝3体で戦えるので最強に決まっている説禁止伝説を再起の祈りで復活させまくれば、こちらだけ実質禁伝3体で戦えるので最強に決まっている説</h4>
+            <p class="ans">解答</p>
+        </article>
+        
+        <article>
+            <h3>次の2次不等式を解け。</h3>
+            <h4>$x^2-7x+6=0$</h4>
+            <p class="ans">
+            \begin{eqnarray}
+                x^2-7x+6 &=& (x-1)(x-6) \\
+                &=& 0 \\
+                x &=& 1,6
+            \end{eqnarray}
+            </p>
+            <h4>$-x^2+3x+1\gt0$</h4>
+            <p class="ans">解答</p>
+            <h4>$-x^2+3x+1\gt0$</h4>
+            <p class="ans">解答</p>
+        </article>
+            
+        <article>
+            <h3>次の2次不等式を解け。</h3>
+            <h4>$-x^2+3x+1\gt0$</h4>
+            <p class="ans">解答</p>
+            <h4>$-x^2+3x+1\gt0$</h4>
+            <p class="ans">解答</p>
+            <h4>$-x^2+3x+1\gt0$</h4>
+            <p class="ans">解答</p>
+            <h4>$-x^2+3x+1\gt0$</h4>
+            <p class="ans">解答</p>
+        </article>
+            
+        <article>
+            <h3>次の2次不等式を解け。</h3>
+            <h4>$-x^2+3x+1\gt0$</h4>
+            <p class="ans">解答</p>
+            <h4>$-x^2+3x+1\gt0$</h4>
+            <p class="ans">解答</p>
+            <h4>$-x^2+3x+1\gt0$</h4>
+            <p class="ans">解答</p>
+            <h4>$-x^2+3x+1\gt0$</h4>
+            <p class="ans">解答</p>
+        </article>
+            
+        <article>
+            <h3>次の2次不等式を解け。</h3>
+            <h4>$-x^2+3x+1\gt0$</h4>
+            <p class="ans">解答</p>
+            <h4>$-x^2+3x+1\gt0$</h4>
+            <p class="ans">解答</p>
+            <h4>$-x^2+3x+1\gt0$</h4>
+            <p class="ans">解答</p>
+            <h3>禁止伝説を再起の祈りで復活させまくれば、こちらだけ実質禁伝3体で戦えるので最強に決まっている説禁止伝説を再起の祈りで復活させまくれば、こちらだけ実質禁伝3体で戦えるので最強に決まっている説禁止伝説を再起の祈りで復活させまくれば、こちらだけ実質禁伝3体で戦えるので最強に決まっている説</h3>
+            <h4>$-x^2+3x+1\gt0$</h4>
+            <p class="ans">解答</p>
+        </article>
+    </main>
+    
+    <footer>
+        <p>2024-06-12</p>
+        <button class="no-print" onclick="window.print()">PDFをダウンロード</button>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // subject, type, versionの取得
+            const subject = document.getElementById("h1-subject").textContent;
+            const type = document.getElementById("h1-type").textContent;
+            const version = document.getElementById("h1-version").textContent;
+
+            // <h2>タグのカウンター
+            let h2Counter = 0;
+
+            // すべての<article>要素を取得
+            const articles = document.querySelectorAll('main article');
+
+            articles.forEach(function(article) {
+                // <h2>タグの作成
+                h2Counter++;
+                const h2Tag = document.createElement('h2');
+                h2Tag.classList.add('handout-header');
+                h2Tag.innerHTML = `<div class="subject">${subject}</div><div class="version">${type}${version}</div><div class="page">その${h2Counter}</div>`;
+
+                // <article>の最初に<h2>タグを追加
+                article.insertBefore(h2Tag, article.firstChild);
+
+                // <div class="handout-footer">タグの作成
+                const handoutFooterDiv = document.createElement('div');
+                handoutFooterDiv.classList.add('handout-footer');
+                handoutFooterDiv.innerHTML = '<span class="name-space">氏名：</span><span class="grade-space">年</span><span class="class-space">組</span><span class="number-space">番</span><span class="score">点</span>';
+            
+                // <article>の最後に<div class="handout-footer">タグを追加
+                article.appendChild(handoutFooterDiv);
+            });
+        });
+    </script>
+</body>
+</html>
