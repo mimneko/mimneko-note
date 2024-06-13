@@ -21,10 +21,15 @@
     <link rel="stylesheet" href="https://mimneko.github.io/mimneko-note/css/math-highschool.css">
     <!-- 本ページ限定 -->
     <style>
+        html {
+            font-size: 16px;
+        }
+
         body {
             font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #ececec;
         }
 
         header, footer {
@@ -35,22 +40,20 @@
         }
 
         main {
-            margin-top: 0;
-            margin-bottom: 0;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto;
             width: 100%;
             max-width: 844px;
-            background-color: #fff;
+            width: calc(100vh * 182 / 257);/* 大体白銀比 */
         }
 
         article {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            height: calc(100vh - 0px); /* ヘッダーとフッターの高さを引いた高さ */
-            padding: 20px 30px;
+            height: 100vh;
+            padding: 20px;
             page-break-after: always; /* 各ページの最後にページ区切りを入れる */
+            background-color: #fff;
         }
 
         @media (max-width: 600px) {
@@ -112,6 +115,11 @@
             margin-right: .8em;
         }
 
+        .ans {
+            color: #fc8f00;
+            padding-bottom: 2em;
+        }
+
         .handout-footer {
             display: flex;
             justify-content: space-between; /* 左端と右端に要素を配置 */
@@ -121,14 +129,20 @@
             padding-top: 10px;
         }
 
-        .score {
-            padding: 18px 10px 5px 100px;
-            border: solid 1px #000;
+        .name-space {
+            flex-grow: 1;
         }
 
-        .ans {
-            color: orange;
-            padding-bottom: 2em;
+        .grade-space, .class-space, .number-space, .score {
+            flex-shrink: 0;
+            margin-left: 4em;
+        }
+
+        .score {
+            flex-shrink: 0;
+            margin-left: 1em;
+            padding: 18px 10px 5px 100px;
+            border: solid 1px #000;
         }
 
         @media print {
