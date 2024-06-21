@@ -7,9 +7,9 @@
 
 ## どのくらいが適切か
 
-運動
+運動[^5]
 
-食事
+食事[^4]
 
 睡眠[^3]
 > ７時間前後の睡眠時間の人が、生活習慣病やうつ病の発症および死亡に至る危険性が最も低く、これより長い睡眠、短い睡眠のいずれもこれらの危険性を増加させることから、成人においておおよそ６～８時間が適正睡眠時間と考えられています。
@@ -17,3 +17,5 @@
 [^1]: https://www.mhlw.go.jp/wp/hakusyo/kousei/07/dl/0201.pdf
 [^2]: https://www.mext.go.jp/b_menu/kihon/about/mext_00003.html
 [^3]: https://www.mhlw.go.jp/content/10904750/001151837.pdf
+[^4]: https://www.otsuka.co.jp/cmt/nutrition/1day/
+[^5]: https://www.hokeniryo.metro.tokyo.lg.jp/kensui/undou/undou.html
