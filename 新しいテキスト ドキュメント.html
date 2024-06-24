@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>シンプルなHTMLファイル</title>
+    <style>
+        /* 印刷時のスタイル */
+        @media print {
+            /* 既存のヘッダーとフッターを非表示 */
+            body {
+                -webkit-print-color-adjust: exact;
+                font-family: Arial, sans-serif;
+                margin: 0;
+            }
+
+            /* フッターにページ番号を中央下に配置 */
+            @page {
+                size: auto;
+                margin: 0;
+            }
+
+            body::after {
+                counter-reset: page 1;
+                content: counter(page);
+                display: block;
+                position: fixed;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                padding-bottom: 20px;
+                font-size: 12px;
+            }
+        }
+    </style>
+    <script src="https://apis.google.com/js/platform.js"></script>
+</head>
+<body>
+    <h1>こんにちは、世界！</h1>
+    <p>これはシンプルなHTMLファイルの例です。</p>
+
+    <p>追加のコンテンツをここに記述します。テーブルに関する記述はすべて削除されています。</p>
+    <p>ページ番号は1から始まり、印刷時に中央下に表示されます。</p>
+
+    <!-- YouTubeチャンネルのリンクを埋め込み -->
+    <div class="g-ytsubscribe" data-channelid="UCjGzTFr8e_U7nkjotEM6iuw" data-layout="full" data-count="default"></div>
+</body>
+</html>
