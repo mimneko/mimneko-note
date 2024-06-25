@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<title>色を変換する</title>
+</head>
+<body>
+  <label for="red_input">赤(R):</label>
+  <input type="number" min="0" max="255" value="0" id="red_input">
+  <input type="range" min="0" max="255" value="0" id="red_slider">
+  <br>
+  <label for="green_input">緑(G):</label>
+  <input type="number" min="0" max="255" value="0" id="green_input">
+  <input type="range" min="0" max="255" value="0" id="green_slider">
+  <br>
+  <label for="blue_input">青(B):</label>
+  <input type="number" min="0" max="255" value="0" id="blue_input">
+  <input type="range" min="0" max="255" value="0" id="blue_slider">
+  <br>
+  <label for="hue_input">色相(H):</label>
+  <input type="number" min="0" max="360" value="0" id="hue_input">
+  <input type="range" min="0" max="360" value="0" id="hue_slider">
+  <br>
+  <label for="saturation_input">彩度(S):</label>
+  <input type="number" min="0" max="100" value="0" id="saturation_input">
+  <input type="range" min="0" max="100" value="0" id="saturation_slider">
+  <br>
+  <label for="value_input">明度(V):</label>
+  <input type="number" min="0" max="100" value="0" id="value_input">
+  <input type="range" min="0" max="100" value="0" id="value_slider">
+  <br>
+  <label><input type="checkbox" id="uppercaseCheckbox"> 大文字で表示</label>
+  <br>
+  <label for="color_code_input">カラーコード:</label>
+  <input type="text" id="color_code_input" placeholder="16進数カラーコードを入力">
+  <span id="color_code" style="margin-left: 10px;"></span>
+  <br>
+  <div class="color_area" id="color_area"></div>
+
+  <p>参考</p>
+  <ul>
+    <li><a href="https://www.peko-step.com/tool/tfcolor.html" target="_blank">RGBとカラーコードの変換ツール : 数値が何色か調べることもできます - PEKO STEP</a>, 参照<time datetime="2024-04-24">2024-04-24</time></li>
+    <li><a href="https://www.example2.com" target="_blank">ウェブサイトのタイトル2</a>, 参照<time datetime="2024-04-24">2024-04-24</time></li>
+  </ul>
+  
+<script>
+  const redInput = document.getElementById('red_input');
+  const redSlider = document.getElementById('red_slider');
+  const greenInput = document.getElementById('green_input');
+  const greenSlider = document.getElementById('green_slider');
+  const blueInput = document.getElementById('blue_input');
+  const blueSlider = document.getElementById('blue_slider');
+  const hueInput = document.getElementById('hue_input');
+  const hueSlider = document.getElementById('hue_slider');
+  const saturationInput = document.getElementById('saturation_input');
+  const saturationSlider = document.getElementById('saturation_slider');
+  const valueInput = document.getElementById('value_input');
+  const valueSlider = document.getElementById('value_slider');
+  const colorArea = document.getElementById('color_area');
+  const colorCodeInput = document.getElementById('color_code_input');
+  const uppercaseCheckbox = document.getElementById("uppercaseCheckbox");
+
+  function rgbToHsv(r, g, b) {
+    r /= 255, g /= 255, b /= 255;
+    let max = Math.max(r, g, b), min = Math.min(r, g, b);
+    let h, s, v = max;
+
+    let d = max - min;
+    s = max === 0 ? 0 : d / max;
+
+    if (max === min) {
+      h = 0; // achromatic
+    } else {
+      switch (max) {
+        case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+        case g: h = (b - r) / d + 2; break;
+        case b: h = (r - g) / d + 4; break;
+      }
+      h /= 6;
+    }
+
+    return [h * 360, s * 100, v * 100];
+  }
+
+  function hsvToRgb(h, s, v) {
+    let r, g, b;
+
+    h /= 360;
+    s /= 100;
+    v /= 100;
+
+    let i = Math.floor(h * 6);
+    let f = h * 6 - i;
+    let p = v * (1 - s);
+    let q = v * (1 - f * s);
+    let t = v * (1 - (1 - f) * s);
+
+    switch (i % 6) {
+      case 0: r = v, g = t, b = p; break;
+      case 1: r = q, g = v, b = p; break;
+      case 2: r = p, g = v, b = t; break;
+      case 3: r = p, g = q, b = v; break;
+      case 4: r = t, g = p, b = v; break;
+      case 5: r = v, g = p, b = q; break;
+    }
+
+    return [r * 255, g * 255, b * 255];
+  }
+
+  function updateColor() {
+    const redValue = redInput.value;
+    const greenValue = greenInput.value;
+    const blueValue = blueInput.value;
+    const color = `rgb(${redValue}, ${greenValue}, ${blueValue})`;
+    colorArea.style.backgroundColor = color;
+
+    // スライダーの値も更新
+    redSlider.value = redValue;
+    greenSlider.value = greenValue;
+    blueSlider.value = blueValue;
+
+    // カラーコードを更新
+    let hexRed = Number(redValue).toString(16).padStart(2, '0').toLowerCase();
+    let hexGreen = Number(greenValue).toString(16).padStart(2, '0').toLowerCase();
+    let hexBlue = Number(blueValue).toString(16).padStart(2, '0').toLowerCase();
+    if (uppercaseCheckbox.checked) {
+      hexRed = Number(redValue).toString(16).padStart(2, '0').toUpperCase();
+      hexGreen = Number(greenValue).toString(16).padStart(2, '0').toUpperCase();
+      hexBlue = Number(blueValue).toString(16).padStart(2, '0').toUpperCase();
+    }
+    const hexCode = `#${hexRed}${hexGreen}${hexBlue}`;
+    colorCodeInput.value = hexCode;
+
+    // HSVを更新
+    const [h, s, v] = rgbToHsv(redValue, greenValue, blueValue);
+    hueInput.value = h;
+    saturationInput.value = s;
+    valueInput.value = v;
+    hueSlider.value = h;
+    saturationSlider.value = s;
+    valueSlider.value = v;
+  }
+
+  function updateColorFromHex() {
+    let hexCode = colorCodeInput.value.replace(/^#/, '');
+    // カラーコードが3文字の場合は6文字に変換する
+    if (hexCode.length === 3) {
+      hexCode = hexCode.split('').map(char => char + char).join('');
+    }
+    if (hexCode.length === 6) {
+      const r = parseInt(hexCode.slice(0, 2), 16);
+      const g = parseInt(hexCode.slice(2, 4), 16);
+      const b = parseInt(hexCode.slice(4, 6), 16);
+      redInput.value = r;
+      greenInput.value = g;
+      blueInput.value = b;
+      updateColor();
+    }
+  }
+
+  function updateColorFromHsv() {
+    const h = hueInput.value;
+    const s = saturationInput.value;
+    const v = valueInput.value;
+    const [r, g, b] = hsvToRgb(h, s, v);
+    redInput.value = Math.round(r);
+    greenInput.value = Math.round(g);
+    blueInput.value = Math.round(b);
+    updateColor();
+  }
+
+  redInput.addEventListener('input', updateColor);
+  redSlider.addEventListener('input', function() {
+    redInput.value = redSlider.value;
+    updateColor();
+  });
+  greenInput.addEventListener('input', updateColor);
+  greenSlider.addEventListener('input', function() {
+    greenInput.value = greenSlider.value;
+    updateColor();
+  });
+  blueInput.addEventListener('input', updateColor);
+  blueSlider.addEventListener('input', function() {
+    blueInput.value = blueSlider.value;
+    updateColor();
+  });
+  hueInput.addEventListener('input', updateColorFromHsv);
+  hueSlider.addEventListener('input', function() {
+    hueInput.value = hueSlider.value;
+    updateColorFromHsv();
+  });
+  saturationInput.addEventListener('input', updateColorFromHsv);
+  saturationSlider.addEventListener('input', function() {
+    saturationInput.value = saturationSlider.value;
+    updateColorFromHsv();
+  });
+  valueInput.addEventListener('input', updateColorFromHsv);
+  valueSlider.addEventListener('input', function() {
+    valueInput.value = valueSlider.value;
+    updateColorFromHsv();
+  });
+  colorCodeInput.addEventListener('input', updateColorFromHex);
+  uppercaseCheckbox.addEventListener('change', updateColor);
+
+  // 初期表示の色更新
+  updateColor();
+</script>
+</body>
+</html>
