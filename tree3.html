@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>みむねこのーと</title>
+  <!-- ファビコン -->
+  <link rel="icon" href="https://mimneko.github.io/mimneko-note/img/transparent-mimneko.png">
+  <link rel="apple-touch-icon" href="https://mimneko.github.io/mimneko-note/img/mimneko.png">
+  <!-- 基本 -->
+  <link rel="stylesheet" href="https://mimneko.github.io/mimneko-note/css/basic-mimneko.css">
+  <script id="basic-script" async src="https://mimneko.github.io/mimneko-note/js/basic-mimneko.js"></script>
+  <!-- fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- YouTubeチャンネルのリンクを埋め込み -->
+  <script src="https://apis.google.com/js/platform.js"></script>
+	<!-- 本ページ限定 -->
+	<!--<link rel="stylesheet" href="https://mimneko.github.io/mimneko-note/css/folder-tree.css">-->
+	<style>
+		.folder-tree {
+			padding: 0 .5em 0 1.5em;
+		}
+
+		.folder-tree ul {
+			padding-inline-start: .5em;
+		}
+
+		.folder-tree ul li {
+			list-style-type: none;
+			position: relative;
+			padding: .3em .3em .3em 1em;
+			color: #333333;
+			margin-bottom: 0;
+		}
+
+		.folder-tree ul li::before,
+		.folder-tree ul li::after {
+			position: absolute;
+			left: 0;
+			background-color: #333333;
+			content: '';
+		}
+
+		.folder-tree ul li::before {
+			top: 1em;
+			width: 10px;
+			height: 1px;
+		}
+
+		.folder-tree ul li::after {
+			top: 0;
+			width: 1px;
+			height: 100%;
+		}
+
+		.folder-tree ul li:last-child::after {
+			height: 1em;
+		}
+
+		.folder-tree summary {
+			display: block;
+			cursor: pointer;
+		}
+		.folder-tree summary::-webkit-details-marker {
+			display: none;
+		}
+		.folder-tree details > summary::before {
+			content: '';
+			display: inline-block;
+			width: 1.5em;
+			height: 1.5em;
+			margin: 0 0.1em -0.4em -0.2em;
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M 16 13 C 12.691 13 10 15.691 10 19 L 10 45 C 10 48.309 12.691 51 16 51 L 48 51 C 51.309 51 54 48.309 54 45 L 54 23 C 54 19.691 51.309 17 48 17 L 29.103516 17 C 28.198516 17 27.312422 16.689047 26.607422 16.123047 L 24.894531 14.753906 C 23.481531 13.623906 21.706484 13 19.896484 13 L 16 13 z M 16 17 L 19.896484 17 C 20.801484 17 21.688531 17.310953 22.394531 17.876953 L 24.105469 19.246094 C 25.518469 20.376094 27.293516 21 29.103516 21 L 48 21 C 49.103 21 50 21.897 50 23 L 50 24 L 14 24 L 14 19 C 14 17.897 14.897 17 16 17 z M 14 28 L 50 28 L 50 45 C 50 46.103 49.103 47 48 47 L 16 47 C 14.897 47 14 46.103 14 45 L 14 28 z' fill='%232589d0'%3E%3C/path%3E%3C/svg%3E");
+		}
+		.folder-tree details[open] > summary::before {
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M51.336,31H23.641c-0.868,0-1.637,0.56-1.903,1.386L17.348,46c0.338,0,0.764,0,1.083,0h28.099	c0.436,0,0.821-0.283,0.953-0.698l4.317-13.67c0.049-0.156,0.016-0.314-0.071-0.433C51.64,31.08,51.5,31,51.336,31z M48,20H29.104	c-1.81,0-3.585-0.623-4.998-1.753l-1.712-1.37C21.688,16.311,20.801,16,19.896,16H16c-1.103,0-2,0.897-2,2v23.869	c0,0.443,0,1.047,0,1.48l3.931-12.19C18.731,28.671,21.026,27,23.641,27H50v-5C50,20.897,49.103,20,48,20z M48,16	c3.309,0,6,2.691,6,6v5.546c0.473,0.274,0.895,0.639,1.225,1.089c0.751,1.024,0.971,2.358,0.588,3.569l-4.516,14.301	C50.636,48.596,48.72,50,46.529,50H16c-3.309,0-6-2.691-6-6V18c0-3.309,2.691-6,6-6h3.896c1.81,0,3.585,0.623,4.998,1.753	l1.713,1.37C27.312,15.689,28.199,16,29.104,16H48z' fill='%232589d0'%3E%3C/path%3E%3C/svg%3E");
+		}
+		
+		/* アイコン入手元：https://icons8.jp/icon/set/popular-icons/sf-regular */
+
+		.folder-tree span,
+		.folder-tree a {
+			display: inline-block;
+			vertical-align: middle;
+    padding-left: 1.2em; /* アイコンのスペース分だけ左にパディングを追加 */
+    position: relative; /* 絶対位置指定の基準を設定 */
+		}
+		/* 同じ処理をフォルダにたいしても */
+		.folder-tree ul li span::before,
+		.folder-tree ul li a::before {
+			content: '';
+			display: inline-block;
+			width: 1.5em;
+			height: 1.5em;
+    position: absolute; /* アイコンを絶対位置指定 */
+    left: 0; /* 親要素に対して左端を0に設定 */
+    top: 0; /* 親要素に対して上端を0に設定 */
+			margin: -0.1em 0.1em 0 -0.3em;
+			vertical-align: middle;
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M20 10C16.686 10 14 12.686 14 16L14 48C14 51.314 16.686 54 20 54L44 54C47.314 54 50 51.314 50 48L50 28.65625C50 27.06425 49.367188 25.539062 48.242188 24.414062L35.585938 11.757812C34.459938 10.632812 32.93475 10 31.34375 10L20 10zM20 14L30 14L30 24C30 27.314 32.686 30 36 30L46 30L46 48C46 49.105 45.105 50 44 50L20 50C18.895 50 18 49.105 18 48L18 16C18 14.895 18.895 14 20 14zM34 15.828125L44.171875 26L36 26C34.895 26 34 25.105 34 24L34 15.828125z' fill='%23606060'/%3E%3C/svg%3E");
+		}
+
+		.folder-tree summary:hover {
+			background-color: #f5f5f5;
+			border-radius: 5px;
+		}
+
+	</style>
+	<style>
+		header {
+			text-align: center;
+		}
+		footer {
+			padding: 2em 0; 
+			background-color: #333333;
+			color: #fff;
+			font-size: .7em;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			// すべての要素を取得する
+			var elements = document.querySelectorAll('[datetime]');
+
+			// 各要素の中身をdatetime属性の値に変更する
+			elements.forEach(function(element) {
+				var datetimeValue = element.getAttribute('datetime');
+				element.textContent = datetimeValue;
+			});
+
+			// 目次を自動生成したい
+		});
+</script>
+	<script>
+		// header.htmlを挿し込む
+		fetch('https://mimneko.github.io/mimneko-note/js/header.html')
+			.then(response => response.text())
+			.then(data => {document.body.insertAdjacentHTML('afterbegin', data);})
+			.catch(error => console.error('Error loading header:', error));
+
+		// footer.htmlを挿し込む
+		fetch('https://mimneko.github.io/mimneko-note/js/footer.html')
+			.then(response => response.text())
+			.then(data => {document.body.insertAdjacentHTML('beforeend', data);})
+			.catch(error => console.error('Error loading footer:', error));
+	</script>
+	<main>
+		<div id="content">
+			<h1 id="article-title">サイトマップ</h1>
+			<div id="article-information">
+				<div id="renewal-date" datetime="2024-06-26"></div>
+				<div id="author">みむねこ</div>
+			</div>
+
+			<p>本サイトは、テスト運用中です。</p>
+			
+			<div id="toc">
+				<p id="toc-title">目次</p>
+				<ol id="toc-content">
+					<li><a href="#site-map">みむねこのーとサイトマップ</a></li>
+					<li><a href="#other-sites">関連サイト</a></li>
+				</ol>
+			</div>
+
+			<h2 id="site-map">みむねこのーとサイトマップ</h2>
+			<div class="folder-tree">
+				<ul>
+					<li><a href="https://mimneko.github.io/mimneko-note/">フロントページ</a></li>
+					<li>404ページ</li>
+					<li><a href="https://mimneko.github.io/mimneko-note/mission">教育理念</a></li>
+					<li>
+						<details open>
+							<summary>高校数学(math)</summary>
+							<ul>
+								<li>
+									<details open>
+										<summary>数学Ⅰ(math-1)</summary>
+										<ul>
+											<li><a href="https://mimneko.github.io/mimneko-note/math/math-1/sample">サンプル</a></li>
+										</ul>
+									</details>
+								</li>
+								<li>
+									<details open>
+										<summary>数学Ⅱ(math-2)</summary>
+										<ul>
+											<li><a href="https://mimneko.github.io/mimneko-note/math/math-2/trig-formula">三角関数に関する公式</a></li>
+										</ul>
+									</details>
+								</li>
+								<li>
+									<details open>
+										<summary>数学Ⅲ(math-3)</summary>
+									</details>
+								</li>
+								<li>
+									<details open>
+										<summary>数学Ａ(math-a)</summary>
+										<ul>
+											<li><a href="https://mimneko.github.io/mimneko-note/math/math-a/indeterminate-equation">不定方程式の解き方</a></li>
+											<li><a href="https://mimneko.github.io/mimneko-note/math/math-a/divisor-formula.html">約数の個数と総和</a></li>
+										</ul>
+									</details>
+								</li>
+								<li>
+									<details open>
+										<summary>数学Ｂ(math-b)</summary>
+									</details>
+								</li>
+								<li>
+									<details open>
+										<summary>数学Ｃ(math-c)</summary>
+									</details>
+								</li>
+								<li><a href="https://mimneko.github.io/mimneko-note/math/handout3">復習プリント</a></li>
+						</ul>
+						</details>
+					</li>
+					<li>
+						<details open>
+							<summary>情報(informatics)</summary>
+							<ul>
+								<li>
+									<details open>
+										<summary>情報Ⅰ(info-1)</summary>
+										<ul>
+											<li><a href="https://mimneko.github.io/mimneko-note/informatics/info-1/change-radix/">進数変換</a></li>
+											<li><a href="https://mimneko.github.io/mimneko-note/informatics/info-1/ascii/">ASCIIコード表</a></li>
+										</ul>
+									</details>
+								</li>
+								<li>
+									<details open>
+										<summary>情報Ⅱ(info-2)</summary>
+										<ul>
+											<li><a href="https://mimneko.github.io/mimneko-note/informatics/info-1/change-radix/">進数変換</a></li>
+											<li><a href="https://mimneko.github.io/mimneko-note/informatics/info-1/ascii/">ASCIIコード表</a></li>
+										</ul>
+									</details>
+								</li>
+							</ul>
+						</details>
+					</li>
+					<li>
+						<details open>
+							<summary>音楽理論(music-theory)</summary>
+						</details>
+					</li>
+					<li>
+						<details open>
+							<summary>デザイン(design)</summary>
+							<ul>
+								<li>
+									<details open>
+										<summary>配色(color)</summary>
+										<ul>
+											<li><a href="https://mimneko.github.io/mimneko-note/design/color/tone/">トーン一覧</a></li>
+											<li>色図鑑</li>
+											<li><a href="https://mimneko.github.io/mimneko-note/design/color/wheel/">色相環</a></li>
+											<li><a href="https://mimneko.github.io/mimneko-note/design/color/convert/">色形式の変換</a></li>
+										</ul>
+									</details>
+								</li>
+							</ul>
+						</details>
+					</li>
+					<li>
+						<details open>
+							<summary>プログラミング(programming)WordpressテーマCocoon用みむねこオリジナルスキン「Kiss」シリーズ</summary>
+							<ul>
+								<li><a href="https://mimneko.github.io/Kiss-Skins/">WordpressテーマCocoon用みむねこオリジナルスキン「Kiss」シリーズ</a></li>
+								<li><a href="https://mimneko.github.io/mimneko-note/programming/tex/mathjax/">高校数学用MathJax</a></li>
+								<li><a>PowerPointで書く数式</a></li>
+							</ul>
+						</details>
+					</li>
+					<li>
+						<details open>
+							<summary>図書館情報学(library)</summary>
+							<ul>
+								<li><a href="https://mimneko.github.io/mimneko-note/library/write-reference/">参考文献の書き方</a></li>
+							</ul>
+						</details>
+					</li>
+					<li>
+						<details open>
+							<summary>漢字(kanji)</summary>
+							<ul>
+								<li><a href="https://mimneko.github.io/kanken-semi1/">漢検準１級ランダム模試</a></li>
+								<li><a href="https://mimneko.github.io/kanken-1/">漢検１級データ</a></li>
+							</ul>
+						</details>
+					</li>
+					<li>
+						<details open>
+							<summary>おすすめ本・サイト(recommendation)</summary>
+							<ul>
+								<li><a href="https://mimneko.github.io/mimneko-note/recommendation/website/">おすすめサイト</a></li>
+							</ul>
+						</details>
+					</li>
+				</ul>
+			</div>
+				
+			<h2 id="other-sites">関連サイト</h2>
+			<ul>
+				<li><a href="https://github.com/mimneko">github</a></li>
+				<li><a href="https://mimneko.github.io/classroom/">授業資料</a></li>
+			</ul>
+			<!-- YouTubeチャンネルのリンクを埋め込み -->
+			<div class="g-ytsubscribe" data-channelid="UCjGzTFr8e_U7nkjotEM6iuw" data-layout="full" data-count="default"></div>
+		</div>
+	</main>
+</body>
+</html>
