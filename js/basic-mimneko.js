@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("load", function() {
   // すべての要素を取得する
   var elements = document.querySelectorAll('[datetime]');
 
