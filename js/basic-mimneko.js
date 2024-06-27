@@ -7,9 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var datetimeValue = element.getAttribute('datetime');
     element.textContent = datetimeValue;
   });
-});
-
-document.addEventListener("DOMContentLoaded", function() {
+  
     // すべての<h2>および<h3>要素を取得
     var headings = document.querySelectorAll("h2, h3");
     if (headings.length > 0) {
@@ -57,33 +55,33 @@ document.addEventListener("DOMContentLoaded", function() {
         var firstHeading = headings[0];
         firstHeading.parentNode.insertBefore(tocDiv, firstHeading);
     }
+
+    // サイト名
+    const siteName = "サイト名";
+    
+    // 全てのh1要素を取得
+    const h1Elements = document.querySelectorAll('h1');
+    
+    if (h1Elements.length > 0) {
+        // 最初のh1要素のテキストを取得
+        const h1Text = h1Elements[0].innerText;
+        
+        // headのtitle要素を取得
+        const titleElement = document.querySelector('title');
+        
+        // title要素のテキストを h1のテキスト | サイト名 に設定
+        titleElement.innerText = `${h1Text} | ${siteName}`;
+    }
+    
+    // header.htmlを挿し込む
+    fetch('https://mimneko.github.io/mimneko-note/js/header.html')
+      .then(response => response.text())
+      .then(data => {document.body.insertAdjacentHTML('afterbegin', data);})
+      .catch(error => console.error('Error loading header:', error));
+    
+    // footer.htmlを挿し込む
+    fetch('https://mimneko.github.io/mimneko-note/js/footer.html')
+      .then(response => response.text())
+      .then(data => {document.body.insertAdjacentHTML('beforeend', data);})
+      .catch(error => console.error('Error loading footer:', error));
 });
-
-// サイト名
-const siteName = "サイト名";
-
-// 全てのh1要素を取得
-const h1Elements = document.querySelectorAll('h1');
-
-if (h1Elements.length > 0) {
-    // 最初のh1要素のテキストを取得
-    const h1Text = h1Elements[0].innerText;
-    
-    // headのtitle要素を取得
-    const titleElement = document.querySelector('title');
-    
-    // title要素のテキストを h1のテキスト | サイト名 に設定
-    titleElement.innerText = `${h1Text} | ${siteName}`;
-}
-
-// header.htmlを挿し込む
-fetch('https://mimneko.github.io/mimneko-note/js/header.html')
-  .then(response => response.text())
-  .then(data => {document.body.insertAdjacentHTML('afterbegin', data);})
-  .catch(error => console.error('Error loading header:', error));
-
-// footer.htmlを挿し込む
-fetch('https://mimneko.github.io/mimneko-note/js/footer.html')
-  .then(response => response.text())
-  .then(data => {document.body.insertAdjacentHTML('beforeend', data);})
-  .catch(error => console.error('Error loading footer:', error));
