@@ -64,11 +64,33 @@
 		.folder-tree summary::-webkit-details-marker {
 			display: none;
 		}
-		.folder-tree details > summary::before {
+		.folder-tree summary,
+		.folder-tree span,
+		.folder-tree a {
+			display: inline-block;
+			vertical-align: middle;
+			position: relative;
+		}
+		.folder-tree summary {
+			padding-left: 1.3em;
+		}
+
+		.folder-tree summary:hover {
+			background-color: #f5f5f5;
+			border-radius: 5px;
+		}
+		.folder-tree details > summary::before,
+		.folder-tree ul li span::before,
+		.folder-tree ul li a::before {
 			content: '';
 			display: inline-block;
 			width: 1.5em;
 			height: 1.5em;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+		.folder-tree details > summary::before {
 			margin: 0 0.1em -0.4em -0.2em;
 			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M 16 13 C 12.691 13 10 15.691 10 19 L 10 45 C 10 48.309 12.691 51 16 51 L 48 51 C 51.309 51 54 48.309 54 45 L 54 23 C 54 19.691 51.309 17 48 17 L 29.103516 17 C 28.198516 17 27.312422 16.689047 26.607422 16.123047 L 24.894531 14.753906 C 23.481531 13.623906 21.706484 13 19.896484 13 L 16 13 z M 16 17 L 19.896484 17 C 20.801484 17 21.688531 17.310953 22.394531 17.876953 L 24.105469 19.246094 C 25.518469 20.376094 27.293516 21 29.103516 21 L 48 21 C 49.103 21 50 21.897 50 23 L 50 24 L 14 24 L 14 19 C 14 17.897 14.897 17 16 17 z M 14 28 L 50 28 L 50 45 C 50 46.103 49.103 47 48 47 L 16 47 C 14.897 47 14 46.103 14 45 L 14 28 z' fill='%232589d0'%3E%3C/path%3E%3C/svg%3E");
 		}
@@ -80,29 +102,13 @@
 
 		.folder-tree span,
 		.folder-tree a {
-			display: inline-block;
-			vertical-align: middle;
-		padding-left: 1.2em; /* アイコンのスペース分だけ左にパディングを追加 */
-		position: relative; /* 絶対位置指定の基準を設定 */
+			padding-left: 1.2em;
 		}
-		/* 同じ処理をフォルダにたいしても */
 		.folder-tree ul li span::before,
 		.folder-tree ul li a::before {
-			content: '';
-			display: inline-block;
-			width: 1.5em;
-			height: 1.5em;
-    position: absolute; /* アイコンを絶対位置指定 */
-    left: 0; /* 親要素に対して左端を0に設定 */
-    top: 0; /* 親要素に対して上端を0に設定 */
 			margin: 0 0.1em 0 -0.3em;
 			vertical-align: middle;
 			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M20 10C16.686 10 14 12.686 14 16L14 48C14 51.314 16.686 54 20 54L44 54C47.314 54 50 51.314 50 48L50 28.65625C50 27.06425 49.367188 25.539062 48.242188 24.414062L35.585938 11.757812C34.459938 10.632812 32.93475 10 31.34375 10L20 10zM20 14L30 14L30 24C30 27.314 32.686 30 36 30L46 30L46 48C46 49.105 45.105 50 44 50L20 50C18.895 50 18 49.105 18 48L18 16C18 14.895 18.895 14 20 14zM34 15.828125L44.171875 26L36 26C34.895 26 34 25.105 34 24L34 15.828125z' fill='%23606060'/%3E%3C/svg%3E");
-		}
-
-		.folder-tree summary:hover {
-			background-color: #f5f5f5;
-			border-radius: 5px;
 		}
 
 	</style>
@@ -133,7 +139,7 @@
 
 			// 目次を自動生成したい
 		});
-</script>
+	</script>
 	<script>
 		// header.htmlを挿し込む
 		fetch('https://mimneko.github.io/mimneko-note/js/header.html')
@@ -269,7 +275,7 @@
 					</li>
 					<li>
 						<details open>
-							<summary>プログラミング(programming)WordpressテーマCocoon用みむねこオリジナルスキン「Kiss」シリーズ</summary>
+							<summary>プログラミング(programming)</summary>
 							<ul>
 								<li><a href="https://mimneko.github.io/Kiss-Skins/">WordpressテーマCocoon用みむねこオリジナルスキン「Kiss」シリーズ</a></li>
 								<li><a href="https://mimneko.github.io/mimneko-note/programming/tex/mathjax/">高校数学用MathJax</a></li>
