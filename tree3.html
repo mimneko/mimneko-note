@@ -26,11 +26,11 @@
 		}
 
 		.folder-tree ul li {
-			list-style-type: none;
 			position: relative;
 			padding: .3em .3em .3em 1em;
-			color: #333333;
 			margin-bottom: 0;
+			list-style-type: none;
+			color: #333333;
 		}
 
 		.folder-tree ul li::before,
@@ -60,50 +60,54 @@
 		.folder-tree summary {
 			display: block;
 			cursor: pointer;
+			padding-left: 1.3em;
 		}
+		
 		.folder-tree summary::-webkit-details-marker {
 			display: none;
-		}
-		.folder-tree summary,
-		.folder-tree span,
-		.folder-tree a {
-			display: inline-block;
-			vertical-align: middle;
-			position: relative;
-		}
-		.folder-tree summary {
-			padding-left: 1.3em;
 		}
 
 		.folder-tree summary:hover {
 			background-color: #f5f5f5;
 			border-radius: 5px;
 		}
+
+		.folder-tree summary,
+		.folder-tree ul li span,
+		.folder-tree ul li a {
+			display: inline-block;
+			vertical-align: middle;
+			position: relative;
+		}
+
 		.folder-tree details > summary::before,
 		.folder-tree ul li span::before,
 		.folder-tree ul li a::before {
+			position: absolute;
+			left: 0;
+			top: 0;
 			content: '';
 			display: inline-block;
 			width: 1.5em;
 			height: 1.5em;
-			position: absolute;
-			left: 0;
-			top: 0;
 		}
+
+		/* アイコン入手元：https://icons8.jp/icon/set/popular-icons/sf-regular */
+
 		.folder-tree details > summary::before {
 			margin: 0 0.1em -0.4em -0.2em;
 			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M 16 13 C 12.691 13 10 15.691 10 19 L 10 45 C 10 48.309 12.691 51 16 51 L 48 51 C 51.309 51 54 48.309 54 45 L 54 23 C 54 19.691 51.309 17 48 17 L 29.103516 17 C 28.198516 17 27.312422 16.689047 26.607422 16.123047 L 24.894531 14.753906 C 23.481531 13.623906 21.706484 13 19.896484 13 L 16 13 z M 16 17 L 19.896484 17 C 20.801484 17 21.688531 17.310953 22.394531 17.876953 L 24.105469 19.246094 C 25.518469 20.376094 27.293516 21 29.103516 21 L 48 21 C 49.103 21 50 21.897 50 23 L 50 24 L 14 24 L 14 19 C 14 17.897 14.897 17 16 17 z M 14 28 L 50 28 L 50 45 C 50 46.103 49.103 47 48 47 L 16 47 C 14.897 47 14 46.103 14 45 L 14 28 z' fill='%232589d0'%3E%3C/path%3E%3C/svg%3E");
 		}
+
 		.folder-tree details[open] > summary::before {
 			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M51.336,31H23.641c-0.868,0-1.637,0.56-1.903,1.386L17.348,46c0.338,0,0.764,0,1.083,0h28.099	c0.436,0,0.821-0.283,0.953-0.698l4.317-13.67c0.049-0.156,0.016-0.314-0.071-0.433C51.64,31.08,51.5,31,51.336,31z M48,20H29.104	c-1.81,0-3.585-0.623-4.998-1.753l-1.712-1.37C21.688,16.311,20.801,16,19.896,16H16c-1.103,0-2,0.897-2,2v23.869	c0,0.443,0,1.047,0,1.48l3.931-12.19C18.731,28.671,21.026,27,23.641,27H50v-5C50,20.897,49.103,20,48,20z M48,16	c3.309,0,6,2.691,6,6v5.546c0.473,0.274,0.895,0.639,1.225,1.089c0.751,1.024,0.971,2.358,0.588,3.569l-4.516,14.301	C50.636,48.596,48.72,50,46.529,50H16c-3.309,0-6-2.691-6-6V18c0-3.309,2.691-6,6-6h3.896c1.81,0,3.585,0.623,4.998,1.753	l1.713,1.37C27.312,15.689,28.199,16,29.104,16H48z' fill='%232589d0'%3E%3C/path%3E%3C/svg%3E");
 		}
-		
-		/* アイコン入手元：https://icons8.jp/icon/set/popular-icons/sf-regular */
 
-		.folder-tree span,
-		.folder-tree a {
+		.folder-tree ul li span,
+		.folder-tree ul li a {
 			padding-left: 1.2em;
 		}
+
 		.folder-tree ul li span::before,
 		.folder-tree ul li a::before {
 			margin: 0 0.1em 0 -0.3em;
