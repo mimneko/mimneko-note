@@ -59,6 +59,23 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+// サイト名
+const siteName = "サイト名";
+
+// 全てのh1要素を取得
+const h1Elements = document.querySelectorAll('h1');
+
+if (h1Elements.length > 0) {
+    // 最初のh1要素のテキストを取得
+    const h1Text = h1Elements[0].innerText;
+    
+    // headのtitle要素を取得
+    const titleElement = document.querySelector('title');
+    
+    // title要素のテキストを h1のテキスト | サイト名 に設定
+    titleElement.innerText = `${h1Text} | ${siteName}`;
+}
+
 // header.htmlを挿し込む
 fetch('https://mimneko.github.io/mimneko-note/js/header.html')
   .then(response => response.text())
