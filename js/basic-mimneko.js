@@ -73,7 +73,7 @@ if (h1Elements.length > 0) {
     const titleElement = document.querySelector('title');
     
     // title要素のテキストを h1のテキスト | サイト名 に設定
-    titleElement.innerText = ${h1Text} | ${siteName};
+    titleElement.innerText = `${h1Text} | ${siteName}`;
 }
 
 // header.htmlを挿し込む
