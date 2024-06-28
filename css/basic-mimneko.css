@@ -53,8 +53,11 @@ main {
   ヘッダーとフッター
 ----------------------------------------- */
 header {
-  text-align: center;
+  text-align: left;
+  color: var(--color-black);
+  font-size: 24px;
 }
+
 footer {
   padding: 2em 0; 
   background-color: #333333;
