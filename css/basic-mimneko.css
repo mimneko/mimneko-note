@@ -58,6 +58,11 @@ header {
   font-size: 24px;
 }
 
+header a {
+  color: var(--color-black);
+  text-decoration: none;
+}
+
 footer {
   padding: 2em 0; 
   background-color: #333333;
