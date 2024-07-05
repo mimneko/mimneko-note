@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="サイトの簡単な説明文をここに入れます。">
+    <title>おすすめ本・サイト | サイト名</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="page-container">
+        <div class="content-wrap">
+            <header>
+                <div class="header-content">
+                    <div class="logo">
+                        <a href="/">
+                            <img src="site-icon3.png" alt="サイトアイコン" class="site-icon">
+                            <span>サイト名</span>
+                        </a>
+                    </div>
+                    <nav>
+                        <ul>
+                            <li><a href="#home">ホーム</a></li>
+                            <li><a href="#about">概要</a></li>
+                            <li><a href="#services">サービス</a></li>
+                            <li><a href="#contact">お問い合わせ</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+
+            <main>
+                <div class="body-content">
+                    <nav aria-label="パンくずリスト">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/"><i class="fas fa-home"></i> ホーム</a></li>
+                            <li class="breadcrumb-item"><a href="/カテゴリ"><i class="fas fa-folder"></i> カテゴリ</a></li>
+                            <li class="breadcrumb-item"><a href="/サブカテゴリ"><i class="fas fa-folder"></i> サブカテゴリ</a></li>
+                            <li class="breadcrumb-item active" aria-current="page"><i class="fas fa-file"></i> 現在のページ</li>
+                        </ol>
+                    </nav>
+
+                    <article>
+                        <h1 id="article-title">おすすめ本・サイト</h1>
+                        <div id="article-information">
+                            <div id="renewal-date" datetime="2024-04-30">2024-06-07</div>
+                            <div id="author">みむねこ</div>
+                        </div>
+                        <div class="article-body">
+                            <p>ここに本文が入ります。現代的なデザインは、シンプルさと機能性を重視します。</p>
+                            <h2>見出し</h2>
+                            <h3>見出し</h3>
+                            <p>ここに本文が入ります。現代的なデザインは、シンプルさと機能性を重視します。</p>
+                        </div>
+                    </article>
+
+                    <nav class="pager">
+                        <a href="#"><i class="fas fa-chevron-left"></i> 前の記事</a>
+                        <a href="#">次の記事 <i class="fas fa-chevron-right"></i></a>
+                    </nav>
+                </div>
+
+                <aside>
+                    <section class="widget">
+                        <h2>最新の投稿</h2>
+                        <ul>
+                            <li><a href="#">記事1のタイトル</a></li>
+                            <li><a href="#">記事2のタイトル</a></li>
+                            <li><a href="#">記事3のタイトル</a></li>
+                        </ul>
+                    </section>
+                    
+                    <section class="widget">
+                        <h2>カテゴリ</h2>
+                        <ul>
+                            <li><a href="#">カテゴリ1</a></li>
+                            <li><a href="#">カテゴリ2</a></li>
+                            <li><a href="#">カテゴリ3</a></li>
+                            <li><a href="#">カテゴリ4</a></li>
+                        </ul>
+                    </section>
+                    
+                    <section class="widget">
+                        <h2>タグ</h2>
+                        <div class="tag-cloud">
+                            <a href="#" class="tag-1">タグ1</a>
+                            <a href="#" class="tag-2">タグ2</a>
+                            <a href="#" class="tag-3">タグ3</a>
+                            <a href="#" class="tag-1">タグ4</a>
+                            <a href="#" class="tag-2">タグ5</a>
+                        </div>
+                    </section>
+                </aside>
+            </main>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <div class="github-link">
+                    <a href="https://github.com/mimneko" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">ホーム</a></li>
+                        <li><a href="#about">概要</a></li>
+                        <li><a href="#services">サービス</a></li>
+                        <li><a href="#contact">お問い合わせ</a></li>
+                    </ul>
+                </nav>
+                <p class="copyright">&copy; 2024 サイト名. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
