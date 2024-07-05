@@ -217,7 +217,6 @@ footer nav ul li:not(:last-child)::after {
     }
 
     .body-content, aside {
-        width: 100%;
         margin-right: 0;
         margin-bottom: 20px;
     }
