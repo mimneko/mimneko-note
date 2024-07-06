@@ -11,111 +11,108 @@
 </head>
 <body>
     <div class="page-container">
-        <div class="content-wrap">
-            <header>
-                <div class="header-content">
-                    <div class="logo">
-                        <a href="/">
-                            <img src="site-icon3.png" alt="サイトアイコン" class="site-icon">
-                            <span>サイト名</span>
-                        </a>
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <a href="/">
+                        <img src="site-icon3.png" alt="サイトアイコン" class="site-icon">
+                        <span>サイト名</span>
+                    </a>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">ホーム</a></li>
+                        <li><a href="#about">概要</a></li>
+                        <li><a href="#services">サービス</a></li>
+                        <li><a href="#contact">お問い合わせ</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div class="body-content">
+                <nav class="breadcrumb" aria-label="パンくずリスト">
+                    <ol>
+                        <li class="breadcrumb-item"><a href="/"><i class="fas fa-home"></i> ホーム</a></li>
+                        <li class="breadcrumb-item"><a href="/カテゴリ"><i class="fas fa-folder"></i> カテゴリ</a></li>
+                        <li class="breadcrumb-item"><a href="/サブカテゴリ"><i class="fas fa-folder"></i> サブカテゴリ</a></li>
+                        <li class="breadcrumb-item active" aria-current="page"><i class="fas fa-file"></i> 現在のページ</li>
+                    </ol>
+                </nav>
+
+                <article>
+                    <div class="article-header">
+                        <h1 id="article-title">おすすめ本・サイト</h1>
+                        <div id="article-information">
+                            <span id="written-date"><i class="fas fa-pen"></i>2024-06-07</span>
+                            <span id="updated-date"><i class="fas fa-sync-alt fa-flip-horizontal"></i>2024-07-06</span>
+                            <span id="article-author"><i class="fas fa-user"></i>ユーザー名</span>
+                        </div>
                     </div>
-                    <nav>
-                        <ul>
-                            <li><a href="#home">ホーム</a></li>
-                            <li><a href="#about">概要</a></li>
-                            <li><a href="#services">サービス</a></li>
-                            <li><a href="#contact">お問い合わせ</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </header>
 
-            <main>
-                <div class="body-content">
-                    <nav class="breadcrumb" aria-label="パンくずリスト">
-                        <ol>
-                            <li class="breadcrumb-item"><a href="/"><i class="fas fa-home"></i> ホーム</a></li>
-                            <li class="breadcrumb-item"><a href="/カテゴリ"><i class="fas fa-folder"></i> カテゴリ</a></li>
-                            <li class="breadcrumb-item"><a href="/サブカテゴリ"><i class="fas fa-folder"></i> サブカテゴリ</a></li>
-                            <li class="breadcrumb-item active" aria-current="page"><i class="fas fa-file"></i> 現在のページ</li>
-                        </ol>
-                    </nav>
+                    <div class="article-body">
+                        <p>ここに本文が入ります。現代的なデザインは、シンプルさと機能性を重視します。</p>
+                        <h2>見出し</h2>
+                        <h3>見出し</h3>
+                        <p>ここに本文が入ります。現代的なデザインは、シンプルさと機能性を重視します。</p>
+                        <h3>見出し</h3>
+                        <p>ここに本文が入ります。現代的なデザインは、シンプルさと機能性を重視します。</p>
+                        <h2>見出し</h2>
+                        <h3>見出し</h3>
+                        <p>ここに本文が入ります。現代的なデザインは、シンプルさと機能性を重視します。</p>
+                    </div>
 
-                    <article>
-                        <div class="article-header">
-                            <h1 id="article-title">おすすめ本・サイト</h1>
-                            <div id="article-information">
-                                <span id="written-date"><i class="fas fa-pen"></i>2024-06-07</span>
-                                <span id="updated-date"><i class="fas fa-sync-alt fa-flip-horizontal"></i>2024-07-06</span>
-                                <span id="article-author"><i class="fas fa-user"></i>ユーザー名</span>
+                    <div class="article-footer">
+                        <div class="article-categories-tags">
+                            <div class="article-tags">
+                                <a class="tag-link" href="#"><span class="fa fa-tag"></span>タグ1</a>
+                                <a class="tag-link" href="#"><span class="fa fa-tag"></span>タグ2</a>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="article-body">
-                            <p>ここに本文が入ります。現代的なデザインは、シンプルさと機能性を重視します。</p>
-                            <h2>見出し</h2>
-                            <h3>見出し</h3>
-                            <p>ここに本文が入ります。現代的なデザインは、シンプルさと機能性を重視します。</p>
-                            <h3>見出し</h3>
-                            <p>ここに本文が入ります。現代的なデザインは、シンプルさと機能性を重視します。</p>
-                            <h2>見出し</h2>
-                            <h3>見出し</h3>
-                            <p>ここに本文が入ります。現代的なデザインは、シンプルさと機能性を重視します。</p>
-                        </div>
+                </article>
 
-                        <div class="article-footer">
-                            <div class="article-categories-tags">
-                                <div class="article-categories"><a class="cat-link" href="#"><span class="fa fa-folder"></span>カテゴリ1</a></div>
-                                <div class="article-tags">
-                                    <a class="tag-link" href="#"><span class="fa fa-tag"></span>タグ1</a>
-                                    <a class="tag-link" href="#"><span class="fa fa-tag"></span>タグ2</a>
-                                </div>
-                            </div>
-                        </div>
-
-                    </article>
-
-                    <nav class="pager">
-                        <a href="#"><i class="fas fa-chevron-left"></i> 前の記事</a>
-                        <a href="#">次の記事 <i class="fas fa-chevron-right"></i></a>
-                    </nav>
-                </div>
-                <!--
-                <aside id="sidebar">
-                    <section class="widget">
-                        <h2>最新の投稿</h2>
-                        <ul>
-                            <li><a href="#">記事1のタイトル</a></li>
-                            <li><a href="#">記事2のタイトル</a></li>
-                            <li><a href="#">記事3のタイトル</a></li>
-                        </ul>
-                    </section>
-                    
-                    <section class="widget">
-                        <h2>カテゴリ<span class="fa fa-folder"></span></h2>
-                        <ul>
-                            <li><a href="#">カテゴリ1</a></li>
-                            <li><a href="#">カテゴリ2</a></li>
-                            <li><a href="#">カテゴリ3</a></li>
-                            <li><a href="#">カテゴリ4</a></li>
-                        </ul>
-                    </section>
-                    
-                    <section class="widget">
-                        <h2>タグ<span class="fa fa-tag"></span></h2>
-                        <div class="tag-cloud">
-                            <a href="#" class="tag-1">タグ1</a>
-                            <a href="#" class="tag-2">タグ2</a>
-                            <a href="#" class="tag-3">タグ3</a>
-                            <a href="#" class="tag-1">タグ4</a>
-                            <a href="#" class="tag-2">タグ5</a>
-                        </div>
-                    </section>
-                </aside>
-                -->
-            </main>
-        </div>
+                <nav class="pager">
+                    <a href="#"><i class="fas fa-chevron-left"></i> 前の記事</a>
+                    <a href="#">次の記事 <i class="fas fa-chevron-right"></i></a>
+                </nav>
+            </div>
+            <!--
+            <aside id="sidebar">
+                <section class="widget">
+                    <h2>最新の投稿</h2>
+                    <ul>
+                        <li><a href="#">記事1のタイトル</a></li>
+                        <li><a href="#">記事2のタイトル</a></li>
+                        <li><a href="#">記事3のタイトル</a></li>
+                    </ul>
+                </section>
+                
+                <section class="widget">
+                    <h2>カテゴリ<span class="fa fa-folder"></span></h2>
+                    <ul>
+                        <li><a href="#">カテゴリ1</a></li>
+                        <li><a href="#">カテゴリ2</a></li>
+                        <li><a href="#">カテゴリ3</a></li>
+                        <li><a href="#">カテゴリ4</a></li>
+                    </ul>
+                </section>
+                
+                <section class="widget">
+                    <h2>タグ<span class="fa fa-tag"></span></h2>
+                    <div class="tag-cloud">
+                        <a href="#" class="tag-1">タグ1</a>
+                        <a href="#" class="tag-2">タグ2</a>
+                        <a href="#" class="tag-3">タグ3</a>
+                        <a href="#" class="tag-1">タグ4</a>
+                        <a href="#" class="tag-2">タグ5</a>
+                    </div>
+                </section>
+            </aside>
+            -->
+        </main>
 
         <footer>
             <div class="footer-content">
