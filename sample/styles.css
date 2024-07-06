@@ -54,7 +54,7 @@ body {
 main {
     width: 100%;
     max-width: 844px;
-    margin: 10px auto;
+    margin: 0 auto;
     padding: 0;
 }
 
@@ -479,4 +479,13 @@ footer nav ul li:not(:last-child)::after {
     border-radius: 6px;
     text-decoration: none;
     margin-bottom: .5em;
+}
+
+.article-tags .tag-link:hover {
+    background-color: #f0f2f5;
+    color: #3d4245;
+}
+
+.article-body {
+    margin: 32px 0;
 }
