@@ -6,9 +6,9 @@
     --primary-color-hover: rgba(52, 152, 219, 0.8); /* 新しく追加 */
     --header-footer-color: rgb(44,62,80);/*#070817;*/
     --text-color: #222;
-    --bg-color: #f4f4f6;
+    --bg-color: #fff;/*#f4f4f6;*/
     --article-bg-color: #fff;
-    --shadow-color: rgba(0, 0, 0, 0.1);
+    --shadow-color: none;/*rgba(0, 0, 0, 0.1);*/
     --footer-font-size: small;
     --footer-nav-separator-color: #fff;
     --color-main: var(--primary-color);/*rgb(115,147,179);/*#0099ce;*/
@@ -51,17 +51,30 @@ body {
 }
 
 main {
-    max-width: 1200px;
+    max-width: 844px;
     width: 100%;
-    margin: 0 auto;
-    padding: 20px;
+    margin: 10px auto;
+    padding: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     box-sizing: border-box;
 }
 
-header, footer {
+header {
+    color: var(--text-color);
+    padding: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+header nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer {
     background-color: var(--header-footer-color);
     color: var(--article-bg-color);
     padding: 1rem;
@@ -112,7 +125,7 @@ nav ul li a:hover {
 .logo a {
     display: flex;
     align-items: center;
-    color: var(--article-bg-color);
+    color: var(--text-color);
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -123,12 +136,12 @@ nav ul li a:hover {
 
 .body-content {
     flex: 2;
-    margin-right: 20px;
+    margin: 0 30px;
 }
 
 article {
     background-color: var(--article-bg-color);
-    padding: 20px;
+    padding: 0px;
     border-radius: 5px;
     box-shadow: 0 2px 5px var(--shadow-color);
 }
@@ -141,14 +154,10 @@ aside {
     box-shadow: 0 2px 5px var(--shadow-color);
 }
 
-h1, h2 {
-    color: var(--header-footer-color);
-}
-
 .pager {
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
+    padding: 10px 16px;
 }
 
 footer {
@@ -214,11 +223,16 @@ footer nav ul li:not(:last-child)::after {
 @media (max-width: 768px) {
     main {
         flex-direction: column;
+        padding: 0;
     }
 
     .body-content, aside {
         margin-right: 0;
-        margin-bottom: 20px;
+        margin-bottom: 0;
+    }
+
+    header {
+        border-bottom: 1px solid rgb(210,216,221);
     }
 
     .header-content {
@@ -318,6 +332,7 @@ footer nav ul li:not(:last-child)::after {
 .body-content h1 {
     padding: .75rem 1rem;
     margin: 0 0 1.5rem 0;
+    font-size: 2rem;
     border-bottom: solid 3px var(--color-black);
 }
 
@@ -377,7 +392,7 @@ footer nav ul li:not(:last-child)::after {
     margin-right: .5rem;
     font-size: small;
 }
-
+/*
 #renewal-date::before {
     font-family: "Font Awesome 5 Free";
     content: "\f1da";
@@ -391,11 +406,19 @@ footer nav ul li:not(:last-child)::after {
     font-weight: bold;
     margin: 0 .3rem 0 1rem;
 }
+*/
+#article-information span {
+    margin-left: .5rem;
+}
+
+#article-information i {
+    margin-right: .2rem;
+}
 
 /* -----------------------------------------
     パンくずリスト
 ----------------------------------------- */
-.breadcrumb {
+.breadcrumb ol {
     font-size: small;
     list-style: none;
     padding: 10px 16px;
@@ -417,10 +440,33 @@ footer nav ul li:not(:last-child)::after {
     color: var(--color-gray);
 }
 
+.breadcrumb-item a:hover {
+    color: var(--primary-color);
+}
+
 .breadcrumb-item i {
     margin-right: 5px;
 }
 
-.breadcrumb-item a:hover {
+/* -----------------------------------------
+    カテゴリ・タグ
+----------------------------------------- */
+.article-categories-tags ol {
+    font-size: small;
+    padding: 0;
+    color: var(--color-gray);
+    margin: 0;
+}
+
+.article-categories-tags a {
+    text-decoration: none;
+    color: var(--color-gray);
+}
+
+.article-categories-tags a:hover {
     color: var(--primary-color);
+}
+
+.article-categories-tags span {
+    margin-right: 5px;
 }
