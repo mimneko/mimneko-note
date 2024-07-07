@@ -3,11 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="サイトの簡単な説明文をここに入れます。">
-    <title>おすすめ本・サイト | サイト名</title>
+    <meta name="description" content="最新の技術情報を提供するサイトです。Web開発、プログラミング、デザインに関する最新情報をお届けします。">
+    <title>現在のページ | サイト名</title>
+    <link rel="preload" href="styles.css" as="style">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="現在のページ | サイト名">
+    <meta property="og:description" content="最新の技術情報を提供するサイトです。Web開発、プログラミング、デザインに関する最新情報をお届けします。">
+    <meta property="og:image" content="https://example.com/og-image.jpg">
+    <meta property="og:url" content="https://example.com/current-page">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "現在のページ",
+        "datePublished": "2024-06-07",
+        "dateModified": "2024-07-06",
+        "url": "https://example.com/current-page",
+        "publisher": {
+            "@type": "Organization",
+            "name": "サイト名",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://example.com/site-icon3.png"
+            }
+        },
+        "description": "最新の技術情報を提供するサイトです。Web開発、プログラミング、デザインに関する最新情報をお届けします。"
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://example.com/current-page"
+        },
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "ホーム",
+                "item": "https://example.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "カテゴリ",
+                "item": "https://example.com/カテゴリ"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "サブカテゴリ",
+                "item": "https://example.com/サブカテゴリ"
+            },
+            {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "現在のページ",
+                "item": "https://example.com/current-page"
+            }
+            ]
+        }
+    }
+    </script>
 </head>
 <body>
     <div class="page-container">
@@ -16,10 +76,10 @@
                 <div class="logo">
                     <a href="/">
                         <img src="site-icon3.png" alt="サイトアイコン" class="site-icon">
-                        <span>サイト名</span>
+                        <span class="site-name">サイト名</span>
                     </a>
                 </div>
-                <nav>
+                <nav aria-label="メインナビゲーション">
                     <ul>
                         <li><a href="#home">ホーム</a></li>
                         <li><a href="#about">概要</a></li>
@@ -31,20 +91,20 @@
         </header>
 
         <main>
-            <div class="body-content">
+            <div class="main-content">
                 <nav class="breadcrumb" aria-label="パンくずリスト">
                     <ol>
-                        <li class="breadcrumb-item"><a href="/"><i class="fas fa-home"></i> ホーム</a></li>
-                        <li class="breadcrumb-item"><a href="/カテゴリ"><i class="fas fa-folder"></i> カテゴリ</a></li>
-                        <li class="breadcrumb-item"><a href="/サブカテゴリ"><i class="fas fa-folder"></i> サブカテゴリ</a></li>
-                        <li class="breadcrumb-item active" aria-current="page"><i class="fas fa-file"></i> 現在のページ</li>
+                        <li class="breadcrumb-item"><a href="/"><i class="fas fa-home"></i>ホーム</a></li>
+                        <li class="breadcrumb-item"><a href="/カテゴリ"><i class="fas fa-folder"></i>カテゴリ</a></li>
+                        <li class="breadcrumb-item"><a href="/サブカテゴリ"><i class="fas fa-folder"></i>サブカテゴリ</a></li>
+                        <li class="breadcrumb-item active" aria-current="page"><i class="fas fa-file"></i>現在のページ</li>
                     </ol>
                 </nav>
 
                 <article>
                     <div class="article-header">
-                        <h1 id="article-title">おすすめ本・サイト</h1>
-                        <div id="article-information">
+                        <h1 id="article-title">現在のページ</h1>
+                        <div id="article-meta">
                             <span id="written-date"><i class="fas fa-pen"></i>2024-06-07</span>
                             <span id="updated-date"><i class="fas fa-sync-alt fa-flip-horizontal"></i>2024-07-06</span>
                             <span id="article-author"><i class="fas fa-user"></i>ユーザー名</span>
@@ -52,15 +112,37 @@
                     </div>
 
                     <div class="article-body">
-                        <p>ここに本文が入ります。現代的なデザインは、シンプルさと機能性を重視します。</p>
-                        <h2>見出し</h2>
-                        <h3>見出し</h3>
-                        <p>ここに本文が入ります。現代的なデザインは、シンプルさと機能性を重視します。</p>
-                        <h3>見出し</h3>
-                        <p>ここに本文が入ります。現代的なデザインは、シンプルさと機能性を重視します。</p>
-                        <h2>見出し</h2>
-                        <h3>見出し</h3>
-                        <p>ここに本文が入ります。現代的なデザインは、シンプルさと機能性を重視します。</p>
+                        <div id="toc">
+                            <p id="toc-title">目次</p>
+                            <ol id="toc-content" class="section-nav">
+                                <li class="toc-entry toc-h2"><a href="#見出し1">見出し1</a>
+                                    <ol>
+                                        <li class="toc-entry toc-h3"><a href="#見出し1-1">見出し1-1</a></li>
+                                        <li class="toc-entry toc-h3"><a href="#見出し1-2">見出し1-2</a></li>
+                                    </ol>
+                                </li>
+                                <li class="toc-entry toc-h2"><a href="#見出し2">見出し2</a></li>
+                                <li class="toc-entry toc-h2"><a href="#見出し3">見出し3</a>
+                                    <ol>
+                                        <li class="toc-entry toc-h3"><a href="#見出し3-1">見出し3-1</a></li>
+                                    </ol>
+                                </li>
+                            </ol>
+                        </div>
+                        
+                        <p>ある時雨の降る晩のことです。私を乗せた人力車は、何度も大森界隈の険しい坂を上ったり下りたりして、やっと竹藪に囲まれた、小さな西洋館の前に梶棒を下しました。もう鼠色のペンキの剥げかかった、狭苦しい玄関には、車夫の出した提灯の明りで見ると、印度人マティラム・ミスラと日本字で書いた、これだけは新しい、瀬戸物の標札がかかっています。</p>
+                        <h2>中見出し１</h2>
+                        <h3>小見出し１</h3>
+                        <p>ある時雨の降る晩のことです。私を乗せた人力車は、何度も大森界隈の険しい坂を上ったり下りたりして、やっと竹藪に囲まれた、小さな西洋館の前に梶棒を下しました。もう鼠色のペンキの剥げかかった、狭苦しい玄関には、車夫の出した提灯の明りで見ると、印度人マティラム・ミスラと日本字で書いた、これだけは新しい、瀬戸物の標札がかかっています。</p>
+                        <p>ある時雨の降る晩のことです。私を乗せた人力車は、何度も大森界隈の険しい坂を上ったり下りたりして、やっと竹藪に囲まれた、小さな西洋館の前に梶棒を下しました。もう鼠色のペンキの剥げかかった、狭苦しい玄関には、車夫の出した提灯の明りで見ると、印度人マティラム・ミスラと日本字で書いた、これだけは新しい、瀬戸物の標札がかかっています。</p>
+                        <h3>小見出し２</h3>
+                        <h4>小見出し２</h4>
+                        <h5>小見出し２</h5>
+                        <h6>小見出し２</h6>
+                        <p>ある時雨の降る晩のことです。私を乗せた人力車は、何度も大森界隈の険しい坂を上ったり下りたりして、やっと竹藪に囲まれた、小さな西洋館の前に梶棒を下しました。もう鼠色のペンキの剥げかかった、狭苦しい玄関には、車夫の出した提灯の明りで見ると、印度人マティラム・ミスラと日本字で書いた、これだけは新しい、瀬戸物の標札がかかっています。</p>
+                        <h2>中見出し２</h2>
+                        <h3>小見出し３</h3>
+                        <p>ある時雨の降る晩のことです。私を乗せた人力車は、何度も大森界隈の険しい坂を上ったり下りたりして、やっと竹藪に囲まれた、小さな西洋館の前に梶棒を下しました。もう鼠色のペンキの剥げかかった、狭苦しい玄関には、車夫の出した提灯の明りで見ると、印度人マティラム・ミスラと日本字で書いた、これだけは新しい、瀬戸物の標札がかかっています。</p>
                     </div>
 
                     <div class="article-footer">
@@ -75,8 +157,8 @@
                 </article>
 
                 <nav class="pager">
-                    <a href="#"><i class="fas fa-chevron-left"></i> 前の記事</a>
-                    <a href="#">次の記事 <i class="fas fa-chevron-right"></i></a>
+                    <a class="prev-article" href="#"><i class="fas fa-chevron-left"></i>前の記事</a>
+                    <a class="next-article" href="#">次の記事<i class="fas fa-chevron-right"></i></a>
                 </nav>
             </div>
             <!--
@@ -116,12 +198,13 @@
 
         <footer>
             <div class="footer-content">
-                <div class="github-link">
-                    <a href="https://github.com/mimneko" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
+                <div class="social-links">
+                    <ul>
+                        <li><a href="https://github.com/mimneko" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i>GitHub</a></li>
+                        <li><a href="https://www.youtube.com/channel/UCjGzTFr8e_U7nkjotEM6iuw" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i>YouTube</a></li>
+                    </ul>
                 </div>
-                <nav>
+                <nav aria-label="フッターナビゲーション">
                     <ul>
                         <li><a href="#home">ホーム</a></li>
                         <li><a href="#about">概要</a></li>
