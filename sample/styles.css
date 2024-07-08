@@ -682,6 +682,9 @@ blockquote {
     quotes: "“" "”" "‘" "’";  /* 引用符を定義 */
 }
 
+/* -----------------------------------------
+    引用
+----------------------------------------- */
 /* blockquote要素内の引用符のスタイル */
 blockquote::before {
     content: open-quote;       /* 開始引用符を挿入 */
@@ -697,4 +700,13 @@ blockquote::after {
     line-height: 0.1em;        /* 引用符の行の高さを調整 */
     vertical-align: -0.4em;    /* 引用符の位置を調整 */
     color: #ccc;               /* 引用符の色を薄い灰色に */
+}
+
+/* -----------------------------------------
+    注釈
+----------------------------------------- */
+.footnotes p {
+    word-wrap: break-word;
+    word-break: break-all;
+    white-space: normal;
 }
