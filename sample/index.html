@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="最新の技術情報を提供するサイトです。Web開発、プログラミング、デザインに関する最新情報をお届けします。">
-    <title>現在のページ | サイト名</title>
+    <title>現在のページ - サイト名</title>
     <link rel="preload" href="styles.css" as="style">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="現在のページ | サイト名">
@@ -97,7 +98,7 @@
                         <li class="breadcrumb-item"><a href="/"><i class="fas fa-home"></i>ホーム</a></li>
                         <li class="breadcrumb-item"><a href="/カテゴリ"><i class="fas fa-folder"></i>カテゴリ</a></li>
                         <li class="breadcrumb-item"><a href="/サブカテゴリ"><i class="fas fa-folder"></i>サブカテゴリ</a></li>
-                        <li class="breadcrumb-item active" aria-current="page"><i class="fas fa-file"></i>現在のページ</li>
+                        <li class="breadcrumb-item active" aria-current="page"><a href="https://example.com/current-page"><i class="fas fa-file"></i>現在のページ</a></li>
                     </ol>
                 </nav>
 
@@ -105,15 +106,15 @@
                     <div class="article-header">
                         <h1 id="article-title">現在のページ</h1>
                         <div id="article-meta">
-                            <span id="written-date"><i class="fas fa-pen"></i>2024-06-07</span>
-                            <span id="updated-date"><i class="fas fa-sync-alt fa-flip-horizontal"></i>2024-07-06</span>
-                            <span id="article-author"><i class="fas fa-user"></i>ユーザー名</span>
+                            <span id="written-date"><i class="fas fa-pen"></i><span>2024-06-07</span></span>
+                            <span id="updated-date"><i class="fas fa-sync-alt fa-flip-horizontal"></i><span>2024-07-06</span></span>
+                            <span id="article-author"><i class="fas fa-user"></i><span>ユーザー名</span></span>
                         </div>
                     </div>
 
                     <div class="article-body">
                         <div id="toc">
-                            <p id="toc-title">目次</p>
+                            <p id="toc-title"><i class="fa-solid fa-list-ul fa-fw"></i>目次</p>
                             <ol id="toc-content" class="section-nav">
                                 <li class="toc-entry toc-h2"><a href="#見出し1">見出し1</a>
                                     <ol>
@@ -134,15 +135,45 @@
                         <h2>中見出し１</h2>
                         <h3>小見出し１</h3>
                         <p>ある時雨の降る晩のことです。私を乗せた人力車は、何度も大森界隈の険しい坂を上ったり下りたりして、やっと竹藪に囲まれた、小さな西洋館の前に梶棒を下しました。もう鼠色のペンキの剥げかかった、狭苦しい玄関には、車夫の出した提灯の明りで見ると、印度人マティラム・ミスラと日本字で書いた、これだけは新しい、瀬戸物の標札がかかっています。</p>
+                        <p>インラインで<code class="language-plaintext highlighter-rouge">console.log('Hello World!')</code>と表示させることも。</p>
+                        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="err">"</span><span class="nc">Hello</span><span class="o">,</span><span class="nc">World</span><span class="o">!);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
                         <p>ある時雨の降る晩のことです。私を乗せた人力車は、何度も大森界隈の険しい坂を上ったり下りたりして、やっと竹藪に囲まれた、小さな西洋館の前に梶棒を下しました。もう鼠色のペンキの剥げかかった、狭苦しい玄関には、車夫の出した提灯の明りで見ると、印度人マティラム・ミスラと日本字で書いた、これだけは新しい、瀬戸物の標札がかかっています。</p>
+                        <p>$$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$</p>
                         <h3>小見出し２</h3>
                         <h4>小見出し２</h4>
+                        <blockquote>
+                            <p>７時間前後の睡眠時間の人が、生活習慣病やうつ病の発症および死亡に至る危険性が最も低く、これより長い睡眠、短い睡眠のいずれもこれらの危険性を増加させることから、成人においておおよそ６～８時間が適正睡眠時間と考えられています。</p>
+                        </blockquote>
                         <h5>小見出し２</h5>
                         <h6>小見出し２</h6>
                         <p>ある時雨の降る晩のことです。私を乗せた人力車は、何度も大森界隈の険しい坂を上ったり下りたりして、やっと竹藪に囲まれた、小さな西洋館の前に梶棒を下しました。もう鼠色のペンキの剥げかかった、狭苦しい玄関には、車夫の出した提灯の明りで見ると、印度人マティラム・ミスラと日本字で書いた、これだけは新しい、瀬戸物の標札がかかっています。</p>
                         <h2>中見出し２</h2>
                         <h3>小見出し３</h3>
                         <p>ある時雨の降る晩のことです。私を乗せた人力車は、何度も大森界隈の険しい坂を上ったり下りたりして、やっと竹藪に囲まれた、小さな西洋館の前に梶棒を下しました。もう鼠色のペンキの剥げかかった、狭苦しい玄関には、車夫の出した提灯の明りで見ると、印度人マティラム・ミスラと日本字で書いた、これだけは新しい、瀬戸物の標札がかかっています。</p>
+                        <div class="footnotes" role="doc-endnotes">
+                            <ol>
+                                <li id="fn:1" role="doc-endnote">
+                                    <p>https://www.mhlw.go.jp/wp/hakusyo/kousei/07/dl/0201.pdf&nbsp;<a href="#fnref:1" class="reversefootnote" role="doc-backlink">↩</a></p>
+                                </li>
+                                <li id="fn:2" role="doc-endnote">
+                                    <p>https://www.mext.go.jp/b_menu/kihon/about/mext_00003.html&nbsp;<a href="#fnref:2" class="reversefootnote" role="doc-backlink">↩</a></p>
+                                </li>
+                                <li id="fn:5" role="doc-endnote">
+                                    <p>https://www.hokeniryo.metro.tokyo.lg.jp/kensui/undou/undou.html&nbsp;<a href="#fnref:5" class="reversefootnote" role="doc-backlink">↩</a></p>
+                                </li>
+                                <li id="fn:4" role="doc-endnote">
+                                    <p>https://www.otsuka.co.jp/cmt/nutrition/1day/&nbsp;<a href="#fnref:4" class="reversefootnote" role="doc-backlink">↩</a></p>
+                                </li>
+                                <li id="fn:3" role="doc-endnote">
+                                    <p>https://www.mhlw.go.jp/content/10904750/001151837.pdf&nbsp;<a href="#fnref:3" class="reversefootnote" role="doc-backlink">↩</a></p>
+                                </li>
+                            </ol>
+                        </div>
                     </div>
 
                     <div class="article-footer">

@@ -92,6 +92,12 @@ header {
     box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
 }
 
+@media print {
+    header {
+        display: none;
+    }
+}
+
 .header-content {
     display: flex;
     justify-content: space-between;
@@ -151,6 +157,12 @@ footer {
     flex-shrink: 0;
     padding: 2rem 1rem;
     font-size: var(--font-size-small);
+}
+
+@media print {
+    footer {
+        display: none;
+    }
 }
 
 .footer-content {
@@ -228,6 +240,12 @@ aside {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px none;
+}
+
+@media print {
+    aside {
+        display: none;
+    }
 }
 
 .article-body {
@@ -459,11 +477,8 @@ footer nav ul li:not(:last-child)::after {
     font-size: var(--font-size-small);
 }
 
-#article-meta span {
-    margin-left: .7rem;
-}
-
 #article-meta i {
+    margin-left: .7rem;
     margin-right: .2rem;
 }
 
@@ -591,12 +606,6 @@ footer nav ul li:not(:last-child)::after {
     padding: 1.5em 0;
 }
 
-@media print {
-    #toc {
-        background-image: none;
-    }
-}
-
 @media (width <= 768px) {
     #toc {
         width: 90%;
@@ -609,12 +618,6 @@ footer nav ul li:not(:last-child)::after {
     margin: 0;
     margin-bottom: 1rem;
     font-size: 1.2em;
-}
-
-#toc-title::before {
-    font-family: FontAwesome;
-    content: "\f0ca";
-    margin-right: .5rem;
 }
 
 #toc-content {
@@ -636,4 +639,62 @@ footer nav ul li:not(:last-child)::after {
 
 #toc-content li ol{
     padding-inline-start: .5em;
+}
+
+/* -----------------------------------------
+    コードスニペット
+----------------------------------------- */
+/* pre要素のスタイル */
+pre {
+    background-color: #f8f8f8; /* やや薄い灰色の背景色 */
+    color: #000;              /* 黒の文字色 */
+    padding: 1em;             /* 余白を追加 */
+    border: 1px solid #ddd;   /* 薄い灰色の枠線 */
+    border-radius: 5px;       /* 角を丸める */
+    overflow-x: auto;         /* 横スクロールを許可 */
+    white-space: pre-wrap;    /* 長い行を折り返さない */
+    font-family: monospace;   /* 等幅フォントを使用 */
+}
+
+/* pre要素内のcode要素のスタイル */
+pre code {
+    background: none; /* 親要素の背景色を引き継ぐ */
+    color: inherit;   /* 親要素の文字色を引き継ぐ */
+    padding: 0;      /* 追加の余白をなしにする */
+}
+
+/* pre要素の中ではないcode要素のスタイル */
+:not(pre) > code {
+    background-color: #f0f0f0; /* 灰色の背景色 */
+    color: #000;              /* 黒の文字色 */
+    padding: 0.2em 0.4em;     /* 少し余白を追加 */
+    border-radius: 3px;       /* 角を少し丸める */
+    font-family: monospace;   /* 等幅フォントを使用 */
+}
+
+blockquote {
+    background-color: #f9f9f9; /* 背景色を薄い灰色に */
+    color: #555;               /* 文字色を暗い灰色に */
+    border-left: 5px solid #ccc; /* 左側に灰色の縁取りを追加 */
+    margin: 1em 0;             /* 上下に余白を追加 */
+    padding: 0.5em 1em;        /* 内側の余白を追加 */
+    font-style: italic;        /* 文字を斜体に */
+    quotes: "“" "”" "‘" "’";  /* 引用符を定義 */
+}
+
+/* blockquote要素内の引用符のスタイル */
+blockquote::before {
+    content: open-quote;       /* 開始引用符を挿入 */
+    font-size: 2em;            /* 引用符を大きく */
+    line-height: 0.1em;        /* 引用符の行の高さを調整 */
+    vertical-align: -0.4em;    /* 引用符の位置を調整 */
+    color: #ccc;               /* 引用符の色を薄い灰色に */
+}
+
+blockquote::after {
+    content: close-quote;      /* 終了引用符を挿入 */
+    font-size: 2em;            /* 引用符を大きく */
+    line-height: 0.1em;        /* 引用符の行の高さを調整 */
+    vertical-align: -0.4em;    /* 引用符の位置を調整 */
+    color: #ccc;               /* 引用符の色を薄い灰色に */
 }
