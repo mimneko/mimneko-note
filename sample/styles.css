@@ -652,7 +652,7 @@ pre {
     border: 1px solid #ddd;   /* 薄い灰色の枠線 */
     border-radius: 5px;       /* 角を丸める */
     overflow-x: auto;         /* 横スクロールを許可 */
-    white-space: pre-wrap;    /* 長い行を折り返さない */
+    white-space: pre;    /* 長い行を折り返さない */
     font-family: monospace;   /* 等幅フォントを使用 */
 }
 
@@ -672,6 +672,9 @@ pre code {
     font-family: monospace;   /* 等幅フォントを使用 */
 }
 
+/* -----------------------------------------
+    引用
+----------------------------------------- */
 blockquote {
     background-color: #f9f9f9; /* 背景色を薄い灰色に */
     color: #555;               /* 文字色を暗い灰色に */
@@ -682,9 +685,6 @@ blockquote {
     quotes: "“" "”" "‘" "’";  /* 引用符を定義 */
 }
 
-/* -----------------------------------------
-    引用
------------------------------------------ */
 /* blockquote要素内の引用符のスタイル */
 blockquote::before {
     content: open-quote;       /* 開始引用符を挿入 */
