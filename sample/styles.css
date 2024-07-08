@@ -17,6 +17,7 @@
 
     /* フォント */
     --font-family-gothic: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    --font-family-monospace: monospace;
     --font-size-huge: 32px;
     --font-size-large: 22px;
     --font-size-noraml: 16px;
@@ -653,7 +654,7 @@ pre {
     border-radius: 5px;
     overflow-x: auto;
     white-space: pre;
-    font-family: monospace;
+    font-family: var(--font-family-monospace);
 }
 
 pre code {
@@ -668,7 +669,7 @@ pre code {
     color: #000;
     padding: 0.2em 0.4em;
     border-radius: 3px;
-    font-family: monospace;
+    font-family: var(--font-family-monospace);
 }
 
 /* -----------------------------------------
@@ -715,4 +716,29 @@ img {
     width: 100%;
     height: auto;
     display: block;
+}
+
+/* -----------------------------------------
+    表
+----------------------------------------- */
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+table thead tr th {
+    text-align: center!important;
+}
+
+table thead tr {
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+}
+
+table tbody tr:last-child {
+    border-bottom: 2px solid #000;
+}
+
+th, td {
+    padding: 8px 20px;
 }
