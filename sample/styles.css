@@ -163,6 +163,12 @@ footer {
 
 @media print {
     footer {
+        margin-top: auto;
+        background-color: transparent;
+        color: var(--text-color);
+    }
+
+    .footer-content > *:not(.copyright) {
         display: none;
     }
 }
@@ -700,6 +706,7 @@ blockquote::before {
 blockquote::after {
     content: close-quote;
 }
+
 /* -----------------------------------------
     注釈
 ----------------------------------------- */
