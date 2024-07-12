@@ -18,6 +18,7 @@
     /* フォント */
     --font-family-gothic: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
     --font-family-monospace: monospace;
+    --font-family-awesome: "Font Awesome 5 Free";
     --font-size-huge: 32px;
     --font-size-large: 22px;
     --font-size-noraml: 16px;
@@ -27,7 +28,9 @@
     /* レイアウト */
     --max-width-phone: 768px;
     --max-width-tablet: 1024px;
+}
 
+:root {
     /* テーマ色 */
     --page-bg-color: var(--color-white);
     --text-color: var(--color-black);
@@ -52,6 +55,14 @@
     --toc-bg-color1: var(--color-wildsand);
     --toc-bg-color2: var(--color-white);
     --toc-border-color: var(--color-transparentgray);
+    --code-text-color: var(--color-black);
+    --table-border-color: var(--color-black);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        background-color: var(--color-black);
+    }
 }
 
 /* -----------------------------------------
@@ -511,7 +522,7 @@ footer nav ul li:not(:last-child)::after {
 
 .breadcrumb-item + .breadcrumb-item::before {
     content: "\f054";
-    font-family: "Font Awesome 5 Free";
+    font-family: var(--font-family-awesome);
     font-weight: 900;
     padding: 0 12px 0 8px;
 }
@@ -650,11 +661,84 @@ footer nav ul li:not(:last-child)::after {
 }
 
 /* -----------------------------------------
+    注釈
+----------------------------------------- */
+.footnotes p {
+    word-wrap: break-word;
+    word-break: break-all;
+    white-space: normal;
+}
+
+.reversefootnote {
+    position: relative;
+    visibility: hidden;
+}
+
+.reversefootnote::before {
+    content: "\f148";
+    font-family: var(--font-family-awesome);
+    font-weight: 700;
+    font-size: var(--font-size-small);
+    margin-top: 0.25em;
+    display: inline;
+    position: absolute;
+    visibility: visible;
+}
+
+/* -----------------------------------------
+    画像
+----------------------------------------- */
+img {
+    width: 90%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* -----------------------------------------
+    表
+----------------------------------------- */
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+table thead tr th {
+    text-align: center!important;
+}
+
+table thead tr {
+    border-top: 2px solid var(--table-border-color);
+    border-bottom: 2px solid var(--table-border-color);
+}
+
+table tbody tr:last-child {
+    border-bottom: 2px solid var(--table-border-color);
+}
+
+th, td {
+    padding: 8px 20px;
+}
+
+/* -----------------------------------------
+    MathJax
+----------------------------------------- */
+mjx-container {
+    padding: 0 3px;
+    overflow-x: auto;
+    overflow-y: visible;
+}
+
+mjx-container[jax="CHTML"][display="true"] {
+    padding: .7em 0;
+}
+
+/* -----------------------------------------
     コードスニペット
 ----------------------------------------- */
 pre {
     background-color: #f8f8f8;
-    color: #000;
+    color: var(--code-text-color);
     padding: 1em;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -672,7 +756,7 @@ pre code {
 /* インラインコード */
 :not(pre) > code {
     background-color: #f0f0f0;
-    color: #000;
+    color: var(--code-text-color);
     padding: 0.2em 0.4em;
     border-radius: 3px;
     font-family: var(--font-family-monospace);
@@ -705,47 +789,4 @@ blockquote::before {
 
 blockquote::after {
     content: close-quote;
-}
-
-/* -----------------------------------------
-    注釈
------------------------------------------ */
-.footnotes p {
-    word-wrap: break-word;
-    word-break: break-all;
-    white-space: normal;
-}
-
-/* -----------------------------------------
-    画像
------------------------------------------ */
-img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* -----------------------------------------
-    表
------------------------------------------ */
-table {
-    margin: 0 auto;
-    border-collapse: collapse;
-}
-
-table thead tr th {
-    text-align: center!important;
-}
-
-table thead tr {
-    border-top: 2px solid #000;
-    border-bottom: 2px solid #000;
-}
-
-table tbody tr:last-child {
-    border-bottom: 2px solid #000;
-}
-
-th, td {
-    padding: 8px 20px;
 }
