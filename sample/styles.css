@@ -82,6 +82,7 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
+    overscroll-behavior-y: none;
 }
 
 .page-container {
@@ -243,6 +244,7 @@ main {
 .main-content {
     padding: 0px;
     background-color: var(--article-bg-color);
+    border-radius: .5rem;
 }
 
 article {
@@ -663,6 +665,10 @@ footer nav ul li:not(:last-child)::after {
 /* -----------------------------------------
     注釈
 ----------------------------------------- */
+sup a {
+    text-decoration: none;
+}
+
 .footnotes p {
     word-wrap: break-word;
     word-break: break-all;
