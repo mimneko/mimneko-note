@@ -426,14 +426,14 @@ footer nav ul li:not(:last-child)::after {
 /* -----------------------------------------
     見出し
 ----------------------------------------- */
-.main-content h1 {
+article h1 {
     padding: .75rem 1rem;
     margin: 0 0 1.5rem 0;
     font-size: var(--font-size-huge);
     border-bottom: solid 3px var(--h1-border-color);
 }
 
-.main-content h2 {
+article h2 {
     position: relative;
     padding: .75rem 1rem .6rem 1rem;
     margin: 1.5rem 0;
@@ -443,7 +443,7 @@ footer nav ul li:not(:last-child)::after {
     color: var(--article-bg-color);
 }
 
-.main-content h2:before {
+article h2:before {
     position: absolute;
     top: -4px;
     left: 0;
@@ -454,14 +454,14 @@ footer nav ul li:not(:last-child)::after {
     border-bottom: 2px solid var(--base-color);
 }
 
-.main-content h3 {
+article h3 {
     border-bottom: solid 3px var(--base-pale-color);
     position: relative;
     padding: 0 1rem .5rem;
     font-size: var(--font-size-large);
 }
 
-.main-content h3::after {
+article h3::after {
     position: absolute;
     content: " ";
     display: block;
@@ -471,17 +471,17 @@ footer nav ul li:not(:last-child)::after {
     left: 0;
 }
 
-.main-content h4 {
+article h4 {
     font-size: var(--font-size-large);
     border-left: solid 3px var(--base-color);
     padding: .15em 0 .15em calc(1rem - 3px);
 }
 
-.main-content h5 {
+article h5 {
     font-size: var(--font-size-large);
 }
 
-.main-content h6 {
+article h6 {
     font-size: var(--font-size-normal);
 }
 
@@ -608,7 +608,7 @@ footer nav ul li:not(:last-child)::after {
 /* -----------------------------------------
     目次
 ----------------------------------------- */
-#toc {
+article #toc {
     background-image: linear-gradient(
         -45deg, 
         var(--toc-bg-color2) 25%, 
@@ -628,59 +628,59 @@ footer nav ul li:not(:last-child)::after {
 }
 
 @media (width <= 768px) {
-    #toc {
+    article #toc {
         width: 90%;
         margin: 2rem auto;
     }
 }
 
-#toc-title {
+article #toc-title {
     text-align: center; /* 目次の中央揃え */
     margin: 0;
     margin-bottom: 1rem;
     font-size: 1.2em;
 }
 
-#toc-content {
+article #toc-content {
     width: 80%;
     margin: 0 auto;
     line-height: 1.8rem;
     padding-inline-start: 30px;
 }
 
-#toc-content li {
+article #toc-content li {
     padding-left: 1rem;
     margin-bottom: 0;
 }
 
-#toc-content li a {
+article #toc-content li a {
     text-decoration: none;
     color: var(--color-black);
 }
 
-#toc-content li ol{
+article #toc-content li ol{
     padding-inline-start: .5em;
 }
 
 /* -----------------------------------------
     注釈
 ----------------------------------------- */
-sup a {
+article sup a {
     text-decoration: none;
 }
 
-.footnotes p {
+article .footnotes p {
     word-wrap: break-word;
     word-break: break-all;
     white-space: normal;
 }
 
-.reversefootnote {
+article .reversefootnote {
     position: relative;
     visibility: hidden;
 }
 
-.reversefootnote::before {
+article .reversefootnote::before {
     content: "\f148";
     font-family: var(--font-family-awesome);
     font-weight: 700;
@@ -704,45 +704,46 @@ img {
 /* -----------------------------------------
     表
 ----------------------------------------- */
-table {
+article table {
     margin: 0 auto;
     border-collapse: collapse;
 }
 
-table thead tr th {
+article table thead tr th {
     text-align: center!important;
 }
 
-table thead tr {
+article table thead tr {
     border-top: 2px solid var(--table-border-color);
     border-bottom: 2px solid var(--table-border-color);
 }
 
-table tbody tr:last-child {
+article table tbody tr:last-child {
     border-bottom: 2px solid var(--table-border-color);
 }
 
-th, td {
+article table thead tr th,
+article table thead tr td {
     padding: 8px 20px;
 }
 
 /* -----------------------------------------
     MathJax
 ----------------------------------------- */
-mjx-container {
+article mjx-container {
     padding: 0 3px;
     overflow-x: auto;
     overflow-y: visible;
 }
 
-mjx-container[jax="CHTML"][display="true"] {
+article mjx-container[jax="CHTML"][display="true"] {
     padding: .7em 0;
 }
 
 /* -----------------------------------------
     コードスニペット
 ----------------------------------------- */
-pre {
+article pre {
     background-color: #f8f8f8;
     color: var(--code-text-color);
     padding: 1em;
@@ -753,14 +754,14 @@ pre {
     font-family: var(--font-family-monospace);
 }
 
-pre code {
+article pre code {
     background: none;
     color: inherit;
     padding: 0;
 }
 
 /* インラインコード */
-:not(pre) > code {
+article :not(pre) > code {
     background-color: #f0f0f0;
     color: var(--code-text-color);
     padding: 0.2em 0.4em;
@@ -771,7 +772,7 @@ pre code {
 /* -----------------------------------------
     引用
 ----------------------------------------- */
-blockquote {
+article blockquote {
     background-color: #f9f9f9;
     color: #555;
     border-left: 5px solid #ccc;
@@ -781,18 +782,18 @@ blockquote {
     quotes: "“" "”" "‘" "’"; /* 引用符を定義 */
 }
 
-blockquote::before,
-blockquote::after {
+article blockquote::before,
+article blockquote::after {
     font-size: 2em;
     line-height: 0.1em;
     vertical-align: -0.4em;
     color: #ccc;
 }
 
-blockquote::before {
+article blockquote::before {
     content: open-quote;
 }
 
-blockquote::after {
+article blockquote::after {
     content: close-quote;
 }
