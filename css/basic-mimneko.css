@@ -14,7 +14,7 @@
   全体
 ----------------------------------------- */
 body {
-  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-family: "Yu Gothic Medium", "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", "Helvetica Neue", Arial, sans-serif;/*"Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;*/
   background-color: var(--color-white);/*#f5f5f5;*//*#ecf4d9;*/
   color: var(--color-black);
   margin: 0;
